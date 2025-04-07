@@ -3,15 +3,10 @@ import React from "react";
 import { Container, Typography, Button } from "@mui/material";
 
 const relocationLocations = [
-   "Relocation Mumbai", "Relocation Pune", "Relocation Bangalore", "Relocation Mysore", "Relocation Delhi",
-   "Relocation Mumbai", "Relocation Pune", "Relocation Bangalore", "Relocation Mysore", "Relocation Delhi",
-   "Relocation Mumbai", "Relocation Pune", "Relocation Bangalore", "Relocation Mysore", "Relocation Delhi",
-   "Relocation Mumbai", "Relocation Pune", "Relocation Bangalore", "Relocation Mysore", "Relocation Delhi",
-   "Relocation Mumbai", "Relocation Pune", "Relocation Bangalore", "Relocation Mysore", "Relocation Delhi",
-   "Relocation Mumbai", "Relocation Pune", "Relocation Bangalore", "Relocation Mysore", "Relocation Delhi",
-   "Relocation Mumbai", "Relocation Pune", "Relocation Bangalore", "Relocation Mysore", "Relocation Delhi",
-   "Relocation Mumbai", "Relocation Pune", "Relocation Bangalore", "Relocation Mysore", "Relocation Delhi",
-   "Relocation Mumbai", "Relocation Pune", "Relocation Bangalore", "Relocation Mysore", "Relocation Delhi",
+   "Relocation Mumbai", "Relocation Pune", "Relocation Bangalore", "Relocation Mysore",
+   "Relocation Mumbai", "Relocation Pune", "Relocation Bangalore", "Relocation Mysore",
+   "Relocation Mumbai", "Relocation Pune", "Relocation Bangalore", "Relocation Mysore",
+   "Relocation Mumbai", "Relocation Pune", "Relocation Bangalore", "Relocation Mysore",
 ];
 
 const RelocationSection = () => {
@@ -23,7 +18,7 @@ const RelocationSection = () => {
                <Typography variant="h6" className="text-white font-semibold">
                   Trusted Relocation Services Across India
                </Typography>
-               </Container>
+            </Container>
          </div>
 
          <Container maxWidth="lg" className="py-8 px-4">
@@ -57,7 +52,7 @@ const RelocationSection = () => {
             </Typography>
 
             {/* Grid of Buttons */}
-            <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4">
+            <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4">
                {relocationLocations.map((location, index) => (
                   <Button
                      key={index}

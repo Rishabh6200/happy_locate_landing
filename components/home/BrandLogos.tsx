@@ -24,11 +24,11 @@ const BrandLogos = () => {
                   className="border border-blue-100 rounded-md p-2 w-[100px] h-[60px] flex items-center justify-center hover:shadow-sm transition"
                >
                   <Image
-                     src={`/brand-logo/${item}`} // Assuming your images are in public/logos/
+                     src={`/brand-logo/${item}`}
                      alt="logo"
                      width={80}
                      height={40}
-                     objectFit="contain"
+                     className="object-contain"
                   />
                </div>
             ))}

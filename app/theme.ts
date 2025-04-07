@@ -7,11 +7,18 @@ const theme = createTheme({
       main: '#1359D1',
     },
     secondary: {
-      main: '#dc004e', 
+      main: '#dc004e',
     },
     text: {
-      primary: '#ffffff', 
-      secondary: '#000', 
+      primary: '#000',
+      secondary: '#000',
+    },
+  },
+  components: {
+    MuiFormLabel: {
+      styleOverrides: {
+        asterisk: { color: "red" },
+      },
     },
   },
 });
