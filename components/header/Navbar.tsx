@@ -13,11 +13,12 @@ import {
   Menu,
   MenuItem,
   useTheme,
+  Container,
 } from '@mui/material';
 import MenuIcon from '@mui/icons-material/Menu';
 import Image from 'next/image';
 import Link from 'next/link';
-import { ArrowDownward, ArrowDropDown, KeyboardArrowDown } from '@mui/icons-material';
+import { KeyboardArrowDown } from '@mui/icons-material';
 
 const Navbar = () => {
   const [mobileOpen, setMobileOpen] = useState(false);
@@ -26,7 +27,7 @@ const Navbar = () => {
   const [anchorEl, setAnchorEl] = useState<null | HTMLElement>(null);
   const open = Boolean(anchorEl);
 
-  // open on hover
+  // Dropdown hover handlers
   const handleMouseEnter = (event: React.MouseEvent<HTMLButtonElement>) => {
     setAnchorEl(event.currentTarget);
   };
@@ -35,6 +36,7 @@ const Navbar = () => {
     setAnchorEl(null);
   };
 
+  // Scroll elevation effect
   useEffect(() => {
     const handleScroll = () => {
       setScrolled(window.scrollY > 40);
@@ -56,11 +58,7 @@ const Navbar = () => {
     { label: 'Partner Login', href: '/about-us' },
     { label: 'Corporate Login', href: '/about-us' },
     { label: 'Affiliate Login', href: '/about-us' },
-  ]
-
-
-
-
+  ];
 
   return (
     <AppBar
@@ -69,98 +67,99 @@ const Navbar = () => {
       className={`bg-[${palette.primary.main}] shadow shadow-[#494747b1] transition-all duration-300 z-[1100] h-20 ${scrolled ? 'top-0' : 'top-[40px]'
         }`}
     >
-      <Toolbar className="flex justify-between items-center h-full max-w-[1440px] mx-auto px-6 md:px-8 sm:px-4 w-full">
-        {/* Logo */}
-        <Link href="/" className="flex items-center mr-8">
-          <Image
-            src='/images/white-logo.png'
-            alt="HappyLocate Logo"
-            width={150}
-            height={40}
-            priority
-          />
-        </Link>
+      <Container maxWidth="lg">
+        <Toolbar className="flex justify-between items-center h-full w-full px-0">
+          {/* Logo */}
+          <Link href="/" className="flex items-center">
+            <Image
+              src="/images/white-logo.png"
+              alt="HappyLocate Logo"
+              width={150}
+              height={40}
+              priority
+            />
+          </Link>
 
-        {/* Nav Links (desktop) */}
-        <Box className="hidden md:flex items-center gap-10">
-          {navLinks.map((link) => (
-            <Link
-              key={link.label}
-              href={link.href}
-              className="text-white text-base font-medium hover:opacity-80 transition-opacity"
-            >
-              {link.label}
-            </Link>
-          ))}
-        </Box>
-
-        {/* Sign Up + Mobile Menu */}
-        <Box className="flex items-center gap-2">
-          <div
-            className="flex justify-center items-center w-full py-4"
-            onMouseLeave={handleMouseLeave}
-          >
-            <Button
-              id="signup-button"
-              aria-controls={open ? 'signup-menu' : undefined}
-              aria-haspopup="true"
-              aria-expanded={open ? 'true' : undefined}
-              onMouseEnter={handleMouseEnter}
-              endIcon={<KeyboardArrowDown className='h-7 w-7' />}
-              className="bg-white text-[#1359D1] font-bold capitalize py-2 px-8 rounded-full hover:bg-gray-100"
-            >
-              Sign Up
-            </Button>
-            <Menu
-              id="signup-menu"
-              anchorEl={anchorEl}
-              open={open}
-              onClose={handleMouseLeave}
-              slotProps={{
-                list: {
-                  'aria-labelledby': 'signup-button',
-                  onMouseLeave: handleMouseLeave,
-                },
-              }}
-              anchorOrigin={{ vertical: 'bottom', horizontal: 'center' }}
-              transformOrigin={{ vertical: 'top', horizontal: 'center' }}
-              className='-ml-3 mt-1'
-
-            >{signupLinks.map((item, i) => (
-              <Link href={item.href} key={i} passHref>
-                <MenuItem
-                  onClick={handleMouseLeave}
-                  className="text-black hover:text-white"
-                  style={{
-                    backgroundColor: 'transparent',
-                  }}
-                  onMouseEnter={(e) => {
-                    e.currentTarget.style.backgroundColor = palette.primary.main;
-                  }}
-                  onMouseLeave={(e) => {
-                    e.currentTarget.style.backgroundColor = 'transparent';
-                  }}
-                >
-                  {item.label}
-                </MenuItem>
-
+          {/* Nav Links */}
+          <Box className="hidden md:flex items-center gap-10">
+            {navLinks.map((link) => (
+              <Link
+                key={link.label}
+                href={link.href}
+                className="text-white text-base font-medium hover:opacity-80 transition-opacity"
+              >
+                {link.label}
               </Link>
             ))}
-            </Menu>
-          </div>
+          </Box>
 
-          {/* Mobile Menu Icon */}
-          <IconButton
-            color="inherit"
-            aria-label="open drawer"
-            edge="end"
-            onClick={() => setMobileOpen(!mobileOpen)}
-            className="md:hidden"
-          >
-            <MenuIcon />
-          </IconButton>
-        </Box>
-      </Toolbar>
+          {/* Sign Up + Mobile Menu */}
+          <Box className="flex items-center gap-2">
+            <div
+              className="flex justify-center items-center w-full py-4"
+              onMouseLeave={handleMouseLeave}
+            >
+              <Button
+                id="signup-button"
+                aria-controls={open ? 'signup-menu' : undefined}
+                aria-haspopup="true"
+                aria-expanded={open ? 'true' : undefined}
+                onMouseEnter={handleMouseEnter}
+                endIcon={<KeyboardArrowDown className="h-7 w-7" />}
+                className="bg-white text-[#1359D1] font-bold capitalize py-2 px-8 rounded-full hover:bg-gray-100"
+              >
+                Sign Up
+              </Button>
+              <Menu
+                id="signup-menu"
+                anchorEl={anchorEl}
+                open={open}
+                onClose={handleMouseLeave}
+                slotProps={{
+                  list: {
+                    'aria-labelledby': 'signup-button',
+                    onMouseLeave: handleMouseLeave,
+                  },
+                }}
+                anchorOrigin={{ vertical: 'bottom', horizontal: 'center' }}
+                transformOrigin={{ vertical: 'top', horizontal: 'center' }}
+                className="-ml-3 mt-1"
+              >
+                {signupLinks.map((item, i) => (
+                  <Link href={item.href} key={i} passHref>
+                    <MenuItem
+                      onClick={handleMouseLeave}
+                      className="text-black hover:text-white"
+                      style={{
+                        backgroundColor: 'transparent',
+                      }}
+                      onMouseEnter={(e) => {
+                        e.currentTarget.style.backgroundColor = palette.primary.main;
+                      }}
+                      onMouseLeave={(e) => {
+                        e.currentTarget.style.backgroundColor = 'transparent';
+                      }}
+                    >
+                      {item.label}
+                    </MenuItem>
+                  </Link>
+                ))}
+              </Menu>
+            </div>
+
+            {/* Mobile Icon */}
+            <IconButton
+              color="inherit"
+              aria-label="open drawer"
+              edge="end"
+              onClick={() => setMobileOpen(!mobileOpen)}
+              className="md:hidden"
+            >
+              <MenuIcon />
+            </IconButton>
+          </Box>
+        </Toolbar>
+      </Container>
 
       {/* Mobile Drawer */}
       <Drawer

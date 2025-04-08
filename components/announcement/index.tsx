@@ -6,25 +6,24 @@ import { Email, Phone, Star } from '@mui/icons-material';
 
 const Announcement = () => {
   const [isVisible, setIsVisible] = useState(true);
-  const [lastScrollY, setLastScrollY] = useState(0);
+  // const [lastScrollY, setLastScrollY] = useState(0);
 
-  useEffect(() => {
-    const handleScroll = () => {
-      const currentScrollY = window.scrollY;
-      setIsVisible(currentScrollY < lastScrollY || currentScrollY < 10);
-      setLastScrollY(currentScrollY);
-    };
+  // useEffect(() => {
+  //   const handleScroll = () => {
+  //     const currentScrollY = window.scrollY;
+  //     setIsVisible(currentScrollY < lastScrollY || currentScrollY < 10);
+  //     setLastScrollY(currentScrollY);
+  //   };
 
-    window.addEventListener("scroll", handleScroll, { passive: true });
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, [lastScrollY]);
+  //   window.addEventListener("scroll", handleScroll, { passive: true });
+  //   return () => window.removeEventListener("scroll", handleScroll);
+  // }, [lastScrollY]);
 
   return (
     <AppBar
       elevation={0}
-      className={`fixed top-0 left-0 right-0 h-10 z-[1200] bg-[#164DAC] transition-transform duration-700 ease-in-out ${
-        isVisible ? 'translate-y-0' : '-translate-y-full'
-      }`}
+      position="static"
+      className={`h-10 z-[1200] bg-[#164DAC] `}
     >
       <Toolbar
         disableGutters
