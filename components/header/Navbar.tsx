@@ -94,7 +94,7 @@ const Navbar = () => {
           </Box>
 
           {/* Sign Up + Mobile Menu */}
-          <Box className="flex items-center gap-2">
+          <Box className="flex items-center gap-2 max-md:hidden">
             <div
               className="flex justify-center items-center w-full py-4"
               onMouseLeave={handleMouseLeave}
