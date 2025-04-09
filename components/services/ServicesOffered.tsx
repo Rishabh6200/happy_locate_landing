@@ -6,6 +6,7 @@ import Image from 'next/image';
 
 type ServiceItem = {
   title: string;
+  desc?: string;
   icon: string;
 };
 
@@ -28,16 +29,16 @@ const ServicesOffered = ({ heading, buttonText, services }: ServicesOfferedProps
             <div className="flex-[0_0_90%] lg:flex-[0_0_30%] lg:max-w-[30%] flex px-10">
               <Card className="w-full flex flex-col justify-between" elevation={0}>
                 <CardContent className="flex flex-col gap-4">
-                  <Typography variant="h5" className="font-bold text-black">
-                    {heading}
-                  </Typography>
-                  <Button
-                    variant="contained"
-                    color="primary"
-                    className="rounded-full w-fit"
-                  >
-                    {buttonText}
-                  </Button>
+                  {heading && (
+                    <Typography variant="h5" className="font-bold text-black">
+                      {heading}
+                    </Typography>
+                  )}
+                  {buttonText && (
+                    <Button variant="contained" color="primary" className="rounded-full w-fit">
+                      {buttonText}
+                    </Button>
+                  )}
                 </CardContent>
               </Card>
             </div>
@@ -49,18 +50,27 @@ const ServicesOffered = ({ heading, buttonText, services }: ServicesOfferedProps
                 className="flex-[0_0_90%] lg:flex-[0_0_30%] lg:max-w-[30%] flex"
               >
                 <Card className="w-full border border-[#E4E4E4] rounded-2xl bg-[#F5F7FB] flex flex-col" elevation={0}>
-                  <CardContent className="flex flex-col gap-4 items-start text-start flex-grow">
-                    <div className="relative h-20 w-20">
-                      <Image
-                        src={service.icon}
-                        alt={service.title}
-                        fill
-                        className="object-contain"
-                      />
-                    </div>
-                    <Typography variant="h6" className="font-bold">
-                      {service.title}
-                    </Typography>
+                  <CardContent className="flex flex-col gap-3 items-start text-start flex-grow">
+                    {service.icon && (
+                      <div className="relative h-10 w-10">
+                        <Image
+                          src={service.icon}
+                          alt={service.title}
+                          fill
+                          className="object-contain"
+                        />
+                      </div>
+                    )}
+                    {service.title && (
+                      <Typography variant="h6" className="font-bold">
+                        {service.title}
+                      </Typography>
+                    )}
+                    {service.desc && (
+                      <Typography className="text-gray-600 text-sm leading-relaxed">
+                        {service.desc}
+                      </Typography>
+                    )}
                   </CardContent>
                 </Card>
               </div>
