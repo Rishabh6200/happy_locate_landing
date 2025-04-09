@@ -19,6 +19,7 @@ import MenuIcon from '@mui/icons-material/Menu';
 import Image from 'next/image';
 import Link from 'next/link';
 import { KeyboardArrowDown } from '@mui/icons-material';
+import services from '@/json/packer-mover-services.json';
 
 const Navbar = () => {
   const [mobileOpen, setMobileOpen] = useState(false);
@@ -26,8 +27,9 @@ const Navbar = () => {
   const { palette } = useTheme();
   const [anchorEl, setAnchorEl] = useState<null | HTMLElement>(null);
   const open = Boolean(anchorEl);
+  const [servicesAnchorEl, setServicesAnchorEl] = useState<null | HTMLElement>(null);
+  const [subMenuAnchor, setSubMenuAnchor] = useState<null | HTMLElement>(null);
 
-  // Dropdown hover handlers
   const handleMouseEnter = (event: React.MouseEvent<HTMLButtonElement>) => {
     setAnchorEl(event.currentTarget);
   };
@@ -36,7 +38,15 @@ const Navbar = () => {
     setAnchorEl(null);
   };
 
-  // Scroll elevation effect
+  const handleServicesMouseEnter = (event: React.MouseEvent<HTMLElement>) => {
+    setServicesAnchorEl(event.currentTarget);
+  };
+
+  const handleServicesMouseLeave = () => {
+    setServicesAnchorEl(null);
+    setSubMenuAnchor(null);
+  };
+
   useEffect(() => {
     const handleScroll = () => {
       setScrolled(window.scrollY > 40);
@@ -48,7 +58,24 @@ const Navbar = () => {
 
   const navLinks = [
     { label: 'About Us', href: '/about-us' },
-    { label: 'Services', href: '/services/delhi' },
+    {
+      label: 'Services',
+      href: '/services',
+      children: [
+        {
+          label: 'Packing & Moving',
+          subMenu: services.map((service) => ({
+            label: service.title,
+            href: `/services/packer-mover/${service.slug}`,
+          })),
+        },
+        { label: 'Pet Relocation', href: '/services/pet-relocation' },
+        { label: 'Pet Taxi', href: '/services/pet-taxi' },
+        { label: 'Storage', href: '/services/storage' },
+        { label: 'Vehicle Shifting', href: '/services/vehicle-shifting' },
+        { label: 'Support Services', href: '/services/support-services' },
+      ],
+    },
     { label: 'Blogs', href: '/blogs' },
     { label: 'Contact Us', href: '/contact-us' },
   ];
@@ -64,41 +91,93 @@ const Navbar = () => {
     <AppBar
       position="sticky"
       elevation={scrolled ? 4 : 0}
-      className={`bg-[${palette.primary.main}] shadow shadow-[#494747b1] transition-all duration-300 z-[1100] h-20 ${scrolled ? 'top-0' : 'top-[40px]'
-        }`}
+      className={`bg-[${palette.primary.main}] shadow transition-all duration-300 z-[1100] h-20 ${scrolled ? 'top-0' : 'top-[40px]'}`}
     >
       <Container maxWidth="lg">
         <Toolbar className="flex justify-between items-center h-full w-full px-0">
-          {/* Logo */}
           <Link href="/" className="flex items-center">
             <Image
               src="/images/white-logo.png"
-              alt="HappyLocate Logo"
+              alt="Logo"
               width={150}
               height={40}
               priority
             />
           </Link>
 
-          {/* Nav Links */}
           <Box className="hidden md:flex items-center gap-10">
-            {navLinks.map((link) => (
-              <Link
-                key={link.label}
-                href={link.href}
-                className="text-white text-base font-medium hover:opacity-80 transition-opacity"
-              >
-                {link.label}
-              </Link>
-            ))}
+            {navLinks.map((link) =>
+              link.children ? (
+                <div
+                  key={link.label}
+                  onMouseEnter={handleServicesMouseEnter}
+                  onMouseLeave={handleServicesMouseLeave}
+                >
+                  <Link
+                    className="text-white text-base font-medium capitalize"
+                    href={link.href}
+                  >
+                    {link.label}
+                  </Link>
+                  <Menu
+                    anchorEl={servicesAnchorEl}
+                    open={Boolean(servicesAnchorEl)}
+                    onClose={handleServicesMouseLeave}
+                    anchorOrigin={{ vertical: 'bottom', horizontal: 'left' }}
+                    transformOrigin={{ vertical: 'top', horizontal: 'left' }}
+                    MenuListProps={{ onMouseLeave: handleServicesMouseLeave }}
+                    className="mt-2"
+                  >
+                    {link.children.map((child, i) =>
+                      child.subMenu ? (
+                        <MenuItem
+                          key={i}
+                          onMouseEnter={(e) => setSubMenuAnchor(e.currentTarget)}
+                          onMouseLeave={() => setSubMenuAnchor(null)}
+                          className="flex justify-between items-center gap-2"
+                        >
+                          <Link href={child.href ?? '#'} className="w-full text-black">
+                            {child.label}
+                          </Link>
+                          <KeyboardArrowDown className="ml-auto" />
+                          <Menu
+                            anchorEl={subMenuAnchor}
+                            open={Boolean(subMenuAnchor)}
+                            onClose={() => setSubMenuAnchor(null)}
+                            anchorOrigin={{ vertical: 'top', horizontal: 'right' }}
+                            transformOrigin={{ vertical: 'top', horizontal: 'left' }}
+                            MenuListProps={{ onMouseLeave: () => setSubMenuAnchor(null) }}
+                          >
+                            {child.subMenu.map((item, j) => (
+                              <Link key={j} href={item.href} passHref>
+                                <MenuItem>{item.label}</MenuItem>
+                              </Link>
+                            ))}
+                          </Menu>
+                        </MenuItem>
+                      ) : (
+                        <Link key={i} href={child.href} passHref>
+                          <MenuItem>{child.label}</MenuItem>
+                        </Link>
+                      )
+                    )}
+                  </Menu>
+                </div>
+              ) : (
+                <Link
+                  key={link.label}
+                  href={link.href}
+                  className="text-white text-base font-medium hover:opacity-80 transition-opacity"
+                >
+                  {link.label}
+                </Link>
+              )
+            )}
           </Box>
 
-          {/* Sign Up + Mobile Menu */}
+          {/* Sign Up button */}
           <Box className="flex items-center gap-2">
-            <div
-              className="flex justify-center items-center w-full py-4 max-md:hidden"
-              onMouseLeave={handleMouseLeave}
-            >
+            <div className="flex justify-center items-center w-full py-4 max-md:hidden" onMouseLeave={handleMouseLeave}>
               <Button
                 id="signup-button"
                 aria-controls={open ? 'signup-menu' : undefined}
@@ -130,9 +209,7 @@ const Navbar = () => {
                     <MenuItem
                       onClick={handleMouseLeave}
                       className="text-black hover:text-white"
-                      style={{
-                        backgroundColor: 'transparent',
-                      }}
+                      style={{ backgroundColor: 'transparent' }}
                       onMouseEnter={(e) => {
                         e.currentTarget.style.backgroundColor = palette.primary.main;
                       }}
@@ -147,7 +224,7 @@ const Navbar = () => {
               </Menu>
             </div>
 
-            {/* Mobile Icon */}
+            {/* Mobile menu */}
             <IconButton
               color="inherit"
               aria-label="open drawer"
@@ -161,7 +238,6 @@ const Navbar = () => {
         </Toolbar>
       </Container>
 
-      {/* Mobile Drawer */}
       <Drawer
         anchor="right"
         open={mobileOpen}
