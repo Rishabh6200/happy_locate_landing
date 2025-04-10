@@ -3,6 +3,7 @@
 import React, { useState, useEffect } from 'react';
 import Image from 'next/image';
 import FormatQuoteIcon from '@mui/icons-material/FormatQuote';
+import { Container } from '@mui/material';
 
 const profileImg = '/images/testimonial-man.svg';
 
@@ -46,53 +47,55 @@ const TestimonialCarousel = () => {
    const current = carouselData[currentSlide];
 
    return (
-      <div className="bg-white py-20 px-4 sm:px-8">
-         <div className="max-w-4xl mx-auto">
-            <div className="w-14 h-14">
-               <Image
-                  src='/icons/Quotes-icon.svg'
-                  alt='logo'
-                  width={45}
-                  height={45}
-                  className="object-cover"
-               />
-            </div>
-            <p className="text-xl sm:text-2xl font-light text-gray-800 leading-relaxed mb-10">
-               {current.description}
-            </p>
-            <div className="flex justify-between items-baseline mt-10">
-               {/* Left: Avatar and Text */}
-               <div className="flex items-center gap-4">
-                  <div className="w-14 h-14 rounded-full overflow-hidden">
-                     <Image
-                        src={current.image}
-                        alt={current.name}
-                        width={56}
-                        height={56}
-                        className="object-cover"
-                     />
-                  </div>
-                  <div>
-                     <p className="font-semibold text-md">{current.name}</p>
-                     <p className="text-sm text-gray-500">{current.designation}</p>
-                  </div>
+      <Container maxWidth='lg'>
+         <div className="bg-white py-20 px-4 sm:px-8">
+            <div className=" mx-auto">
+               <div className="w-14 h-14">
+                  <Image
+                     src='/icons/Quotes-icon.svg'
+                     alt='logo'
+                     width={45}
+                     height={45}
+                     className="object-cover"
+                  />
                </div>
+               <p className="text-xl sm:text-2xl font-light text-gray-800 leading-relaxed mb-10">
+                  {current.description}
+               </p>
+               <div className="flex justify-between items-baseline mt-10">
+                  {/* Left: Avatar and Text */}
+                  <div className="flex items-center gap-4">
+                     <div className="w-14 h-14 rounded-full overflow-hidden">
+                        <Image
+                           src={current.image}
+                           alt={current.name}
+                           width={56}
+                           height={56}
+                           className="object-cover"
+                        />
+                     </div>
+                     <div>
+                        <p className="font-semibold text-md">{current.name}</p>
+                        <p className="text-sm text-gray-500">{current.designation}</p>
+                     </div>
+                  </div>
 
-               {/* Right: Dash Pagination */}
-               <div className="flex gap-2">
-                  {carouselData.map((_, index) => (
-                     <span
-                        key={index}
-                        className={`h-1.5 w-6 rounded-full transition-all duration-300 ${index === currentSlide ? 'bg-blue-600' : 'bg-gray-300'
-                           }`}
-                        onClick={() => setCurrentSlide(index)}
-                        style={{ cursor: 'pointer' }}
-                     />
-                  ))}
+                  {/* Right: Dash Pagination */}
+                  <div className="flex gap-2">
+                     {carouselData.map((_, index) => (
+                        <span
+                           key={index}
+                           className={`h-1.5 w-6 rounded-full transition-all duration-300 ${index === currentSlide ? 'bg-blue-600' : 'bg-gray-300'
+                              }`}
+                           onClick={() => setCurrentSlide(index)}
+                           style={{ cursor: 'pointer' }}
+                        />
+                     ))}
+                  </div>
                </div>
             </div>
          </div>
-      </div>
+      </Container>
    );
 };
 

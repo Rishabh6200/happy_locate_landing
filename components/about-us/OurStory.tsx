@@ -48,7 +48,7 @@ const OurStory: React.FC = () => {
               alt="Happy couple moving"
               height={500}
               width={500}
-              className="rounded-2xl max-w-[28rem] sm:max-w-[32rem]"
+              className="rounded-2xl max-w-[20rem] sm:max-w-[32rem]"
               priority
             />
           </div>

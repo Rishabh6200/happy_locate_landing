@@ -1,2 +1,5 @@
 @import "tailwindcss" important;
 
+.custom-fullscreen-drawer {
+   width: 100% !important;
+ }

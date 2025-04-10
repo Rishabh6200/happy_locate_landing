@@ -10,66 +10,54 @@ import {
   Drawer,
   List,
   ListItem,
-  Menu,
-  MenuItem,
   useTheme,
   Container,
 } from '@mui/material';
 import MenuIcon from '@mui/icons-material/Menu';
 import Image from 'next/image';
 import Link from 'next/link';
-import { KeyboardArrowDown } from '@mui/icons-material';
+import { East, KeyboardArrowDown } from '@mui/icons-material';
 import services from '@/json/packer-mover-services.json';
+import { usePathname } from 'next/navigation';
+import MobileDrawer from './MobileDrawer';
 
 const Navbar = () => {
+  const pathname = usePathname();
   const [mobileOpen, setMobileOpen] = useState(false);
-  const [scrolled, setScrolled] = useState(false);
+  // const [scrolled, setScrolled] = useState(false);
   const { palette } = useTheme();
-  const [anchorEl, setAnchorEl] = useState<null | HTMLElement>(null);
-  const open = Boolean(anchorEl);
-  const [servicesAnchorEl, setServicesAnchorEl] = useState<null | HTMLElement>(null);
-  const [subMenuAnchor, setSubMenuAnchor] = useState<null | HTMLElement>(null);
+  const [servicesOpen, setServicesOpen] = useState(false);
+  const [subMenuOpen, setSubMenuOpen] = useState<number | null>(null);
+  const [signUpOpen, setSignUpOpen] = useState(false);
 
-  const handleMouseEnter = (event: React.MouseEvent<HTMLButtonElement>) => {
-    setAnchorEl(event.currentTarget);
+  const closeAllDropdowns = () => {
+    setServicesOpen(false);
+    setSubMenuOpen(null);
+    setSignUpOpen(false);
   };
-
-  const handleMouseLeave = () => {
-    setAnchorEl(null);
-  };
-
-  const handleServicesMouseEnter = (event: React.MouseEvent<HTMLElement>) => {
-    setServicesAnchorEl(event.currentTarget);
-  };
-
-  const handleServicesMouseLeave = () => {
-    setServicesAnchorEl(null);
-    setSubMenuAnchor(null);
-  };
-
-  useEffect(() => {
-    const handleScroll = () => {
-      setScrolled(window.scrollY > 40);
-    };
-
-    window.addEventListener('scroll', handleScroll, { passive: true });
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
 
   const navLinks = [
     { label: 'About Us', href: '/about-us' },
     {
       label: 'Services',
-      href: '/services',
+      // href: '/services',
       children: [
         {
           label: 'Packing & Moving',
+          href: '/services/packer-mover',
           subMenu: services.map((service) => ({
             label: service.title,
             href: `/services/packer-mover/${service.slug}`,
           })),
         },
-        { label: 'Pet Relocation', href: '/services/pet-relocation' },
+        {
+          label: 'Pet Relocation',
+          href: '/services/pet-relocation',
+          subMenu: services.map((service) => ({
+            label: service.title,
+            href: `/services/packer-mover/${service.slug}`,
+          })),
+        },
         { label: 'Pet Taxi', href: '/services/pet-taxi' },
         { label: 'Storage', href: '/services/storage' },
         { label: 'Vehicle Shifting', href: '/services/vehicle-shifting' },
@@ -87,17 +75,20 @@ const Navbar = () => {
     { label: 'Affiliate Login', href: '/about-us' },
   ];
 
+  const navTextColor = pathname === '/' ? 'text-black' : 'text-white';
+
   return (
     <AppBar
       position="sticky"
-      elevation={scrolled ? 4 : 0}
-      className={`bg-[${palette.primary.main}] shadow transition-all duration-300 z-[1100] h-20 ${scrolled ? 'top-0' : 'top-[40px]'}`}
+      elevation={1}
+      className={`${pathname === '/' ? 'bg-white' : `bg-[${palette.primary.main}]`}  transition-all duration-300 z-[1100] h-20 $
+      `}
     >
-      <Container maxWidth="lg">
+      <Container maxWidth="lg" className="h-full flex items-center">
         <Toolbar className="flex justify-between items-center h-full w-full px-0">
-          <Link href="/" className="flex items-center">
+          <Link href="/" className="flex items-center" onClick={closeAllDropdowns}>
             <Image
-              src="/images/white-logo.png"
+              src={pathname === '/' ? '/images/brand-nav.svg' : '/images/white-logo.png'}
               alt="Logo"
               width={150}
               height={40}
@@ -105,69 +96,93 @@ const Navbar = () => {
             />
           </Link>
 
-          <Box className="hidden md:flex items-center gap-10">
-            {navLinks.map((link) =>
+          {/* Desktop Links */}
+          <Box className="hidden md:flex items-center gap-10 relative">
+            {navLinks.map((link, idx) =>
               link.children ? (
                 <div
                   key={link.label}
-                  onMouseEnter={handleServicesMouseEnter}
-                  onMouseLeave={handleServicesMouseLeave}
+                  className="relative"
+                  onMouseEnter={() => setServicesOpen(true)}
+                  onMouseLeave={() => {
+                    setServicesOpen(false);
+                    setSubMenuOpen(null);
+                  }}
                 >
                   <Link
-                    className="text-white text-base font-medium capitalize"
-                    href={link.href}
+                    href={link?.href ?? "#"}
+                    onClick={closeAllDropdowns}
+                    className={`${navTextColor} text-base font-medium capitalize flex items-center gap-1`}
                   >
                     {link.label}
+                    <KeyboardArrowDown />
                   </Link>
-                  <Menu
-                    anchorEl={servicesAnchorEl}
-                    open={Boolean(servicesAnchorEl)}
-                    onClose={handleServicesMouseLeave}
-                    anchorOrigin={{ vertical: 'bottom', horizontal: 'left' }}
-                    transformOrigin={{ vertical: 'top', horizontal: 'left' }}
-                    MenuListProps={{ onMouseLeave: handleServicesMouseLeave }}
-                    className="mt-2"
-                  >
-                    {link.children.map((child, i) =>
-                      child.subMenu ? (
-                        <MenuItem
-                          key={i}
-                          onMouseEnter={(e) => setSubMenuAnchor(e.currentTarget)}
-                          onMouseLeave={() => setSubMenuAnchor(null)}
-                          className="flex justify-between items-center gap-2"
-                        >
-                          <Link href={child.href ?? '#'} className="w-full text-black">
-                            {child.label}
-                          </Link>
-                          <KeyboardArrowDown className="ml-auto" />
-                          <Menu
-                            anchorEl={subMenuAnchor}
-                            open={Boolean(subMenuAnchor)}
-                            onClose={() => setSubMenuAnchor(null)}
-                            anchorOrigin={{ vertical: 'top', horizontal: 'right' }}
-                            transformOrigin={{ vertical: 'top', horizontal: 'left' }}
-                            MenuListProps={{ onMouseLeave: () => setSubMenuAnchor(null) }}
-                          >
-                            {child.subMenu.map((item, j) => (
-                              <Link key={j} href={item.href} passHref>
-                                <MenuItem>{item.label}</MenuItem>
+
+                  {servicesOpen && (
+                    <div className="absolute top-full left-0 pt-2">
+                      <div
+                        className="absolute top-5 left-8 -translate-y-full w-4 h-4 rotate-45 shadow-md -z-50"
+                        style={{ backgroundColor: palette.background.paper }}
+                      />
+                      <div className=" bg-white shadow-lg rounded-md z-50 py-2 min-w-[220px]">
+                        {link.children.map((child, i) =>
+                          child.subMenu ? (
+                            <div
+                              key={i}
+                              className="relative group"
+                              onMouseEnter={() => setSubMenuOpen(i)}
+                              onMouseLeave={() => setSubMenuOpen(null)}
+                            >
+                              <Link
+                                href={child.href ?? '#'}
+                                onClick={closeAllDropdowns}
+                                className="flex justify-between items-center w-full px-4 py-2 text-black hover:bg-gray-100"
+                              >
+                                {child.label}
+                                <East fontSize="small" />
                               </Link>
-                            ))}
-                          </Menu>
-                        </MenuItem>
-                      ) : (
-                        <Link key={i} href={child.href} passHref>
-                          <MenuItem>{child.label}</MenuItem>
-                        </Link>
-                      )
-                    )}
-                  </Menu>
+                              {subMenuOpen === i && (
+                                <div className="absolute top-0 left-full pl-2.5">
+                                  <div
+                                    className="absolute top-3 left-1.5 w-4 h-4 rotate-45  -z-50"
+                                    style={{ backgroundColor: palette.background.paper }}
+                                  />
+                                  <div className="bg-white shadow-lg rounded-md py-2 min-w-[200px]">
+                                    {child.subMenu.map((item, j) => (
+                                      <Link
+                                        key={j}
+                                        href={item.href}
+                                        onClick={closeAllDropdowns}
+                                        className="block px-4 py-2 text-black hover:bg-gray-100 whitespace-nowrap"
+                                      >
+                                        {item.label}
+                                      </Link>
+                                    ))}
+                                  </div>
+                                </div>
+                              )}
+                            </div>
+                          ) : (
+                            <Link
+                              key={i}
+                              href={child.href}
+                              onClick={closeAllDropdowns}
+                              className="block px-4 py-2 text-black hover:bg-gray-100"
+                            >
+                              {child.label}
+                            </Link>
+                          )
+                        )}
+                      </div>
+                    </div>
+                  )}
                 </div>
               ) : (
                 <Link
                   key={link.label}
                   href={link.href}
-                  className="text-white text-base font-medium hover:opacity-80 transition-opacity"
+                  onClick={closeAllDropdowns}
+                  className={`${navTextColor} text-base font-medium hover:opacity-80 transition-opacity`}
                 >
                   {link.label}
                 </Link>
@@ -175,90 +190,53 @@ const Navbar = () => {
             )}
           </Box>
 
-          {/* Sign Up button */}
-          <Box className="flex items-center gap-2">
-            <div className="flex justify-center items-center w-full py-4 max-md:hidden" onMouseLeave={handleMouseLeave}>
-              <Button
-                id="signup-button"
-                aria-controls={open ? 'signup-menu' : undefined}
-                aria-haspopup="true"
-                aria-expanded={open ? 'true' : undefined}
-                onMouseEnter={handleMouseEnter}
-                endIcon={<KeyboardArrowDown className="h-7 w-7" />}
-                className="bg-white text-[#1359D1] font-bold capitalize py-2 px-8 rounded-full hover:bg-gray-100"
-              >
-                Sign Up
-              </Button>
-              <Menu
-                id="signup-menu"
-                anchorEl={anchorEl}
-                open={open}
-                onClose={handleMouseLeave}
-                slotProps={{
-                  list: {
-                    'aria-labelledby': 'signup-button',
-                    onMouseLeave: handleMouseLeave,
-                  },
-                }}
-                anchorOrigin={{ vertical: 'bottom', horizontal: 'center' }}
-                transformOrigin={{ vertical: 'top', horizontal: 'center' }}
-                className="-ml-3 mt-1"
-              >
+          {/* Sign Up Dropdown */}
+          <div
+            className="relative max-md:hidden"
+            onMouseEnter={() => setSignUpOpen(true)}
+            onMouseLeave={() => setSignUpOpen(false)}
+          >
+            <Button
+              className={`${pathname === '/' ? `text-white bg-[${palette.primary.main}] hover:opacity-80` : `bg-white text-[${palette.primary.main}] hover:bg-gray-100`}  font-bold capitalize py-2 px-8 rounded-full`} endIcon={<KeyboardArrowDown className="h-7 w-7" />}
+            >
+              Sign Up
+            </Button>
+
+            {signUpOpen && (
+              <div className="absolute top-full left-1/2 -translate-x-1/2 mt-2 bg-white shadow-lg rounded-md py-2 min-w-[200px] z-50">
                 {signupLinks.map((item, i) => (
-                  <Link href={item.href} key={i} passHref>
-                    <MenuItem
-                      onClick={handleMouseLeave}
-                      className="text-black hover:text-white"
-                      style={{ backgroundColor: 'transparent' }}
-                      onMouseEnter={(e) => {
-                        e.currentTarget.style.backgroundColor = palette.primary.main;
-                      }}
-                      onMouseLeave={(e) => {
-                        e.currentTarget.style.backgroundColor = 'transparent';
-                      }}
-                    >
-                      {item.label}
-                    </MenuItem>
+                  <Link
+                    key={i}
+                    href={item.href}
+                    onClick={closeAllDropdowns}
+                    className="block px-4 py-2 text-black hover:bg-gray-100"
+                  >
+                    {item.label}
                   </Link>
                 ))}
-              </Menu>
-            </div>
+              </div>
+            )}
+          </div>
 
-            {/* Mobile menu */}
-            <IconButton
-              color="inherit"
-              aria-label="open drawer"
-              edge="end"
-              onClick={() => setMobileOpen(!mobileOpen)}
-              className="md:hidden"
-            >
-              <MenuIcon />
-            </IconButton>
-          </Box>
+          {/* Mobile Menu Button */}
+          <IconButton
+            color={pathname === '/' ? 'primary' : 'inherit'}
+            aria-label="open drawer"
+            edge="end"
+            onClick={() => setMobileOpen(!mobileOpen)}
+            className="md:hidden"
+          >
+            <MenuIcon />
+          </IconButton>
         </Toolbar>
       </Container>
 
-      <Drawer
-        anchor="right"
-        open={mobileOpen}
-        onClose={() => setMobileOpen(false)}
-        className="md:hidden"
-      >
-        <Box className="w-[250px] bg-[#1359D1] h-full p-8">
-          <List>
-            {navLinks.map((link) => (
-              <ListItem
-                key={link.label}
-                component={Link}
-                href={link.href}
-                className="text-white no-underline py-4 text-base font-medium"
-              >
-                {link.label}
-              </ListItem>
-            ))}
-          </List>
-        </Box>
-      </Drawer>
+      {/* Mobile Drawer */}
+      <MobileDrawer
+        mobileOpen={mobileOpen}
+        setMobileOpen={setMobileOpen}
+        navLinks={navLinks}
+      />
     </AppBar>
   );
 };

@@ -151,5 +151,158 @@
         "Pet Relocation Mumbai"
       ]
     }
+  },
+  {
+    "slug": "mumbai",
+    "title": "Packers And Movers in Mumbai",
+    "breadcrumb": "Packers & Moving",
+    "heroSection": {
+      "tagline": "About Service",
+      "headline": "Hassle-Free Packers & Movers in Bangalore",
+      "description": "Shift your home, office, or goods with 650+ verified partners. Get instant quotes, real-time tracking & professional support.",
+      "content": "Move across Bangalore with confidence – whether it's your home, office, or precious belongings, we’ve got you covered with 650+ verified relocation experts. Enjoy instant quotes, transparent pricing, real-time updates, and end-to-end support for stress-free shifting in Bengaluru’s busy lanes.",
+      "cta": {
+        "text": "Get a Free Quote",
+        "link": "/get-quote"
+      },
+      "image": "/images/bangalore-hero.svg"
+    },
+    "statsSection": {
+      "stats": [
+        {
+          "label": "Best rate in the industry",
+          "value": "4.5"
+        },
+        {
+          "label": "Insurance Available",
+          "value": "72hr"
+        },
+        {
+          "label": "Pin codes served",
+          "value": "15000+"
+        },
+        {
+          "label": "Transparent Pricing",
+          "value": "24x7"
+        }
+      ]
+    },
+    "howItworks": {
+      "chipLabel": "How it Work",
+      "heading": "Relocate Within or From Bangalore in 4 Easy Steps",
+      "subheading": "",
+      "imageUrl": "/images/relocation-worker.svg",
+      "imageAlt": "HappyLocate agent assisting move",
+      "steps": [
+        {
+          "title": "Share Your Move Details",
+          "desc": "Enter your Bengaluru pickup & drop location, moving date and item list — takes under 2 minutes."
+        },
+        {
+          "title": "Instantly View Customized Pricing",
+          "desc": "Get real-time estimates tailored to your move details—no waiting, no hidden charges."
+        },
+        {
+          "title": "Choose & Schedule",
+          "desc": "Pick the best deal based on price, ratings, and availability. We assign a dedicated move manager."
+        },
+        {
+          "title": "Relax, We’ll Move You",
+          "desc": "Enjoy a safe, on-time move with real-time tracking and HappyLocate Assurance."
+        }
+      ]
+    },
+    "ServiceOffered": {
+      "heading": "Services Offered By Top Packers And Movers In Bangalore",
+      "buttonText": "Get a Free Quote",
+      "services": [
+        {
+          "title": "House Shifting",
+          "desc": "Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint.",
+          "icon": "/images/service-box.svg"
+        },
+        {
+          "title": "Office Shifting",
+          "desc": "Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint.",
+          "icon": "/images/service-box.svg"
+        },
+        {
+          "title": "Asset Delivery",
+          "desc": "Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint.",
+          "icon": "/images/service-box.svg"
+        }
+      ]
+    },
+    "PricingTable": {
+      "heading": "Bangalore’s Trusted\nPackers & Movers",
+      "description": "Relocating in Bangalore doesn’t have to be chaotic. Whether you're moving out of a compact 1RK in Koramangala or a spacious 3BHK in Whitefield, HappyLocate ensures a stress-free experience with fixed, transparent pricing.\n\nWe’ve partnered with over 650+ verified movers in Bangalore, offering the best rates and dependable service — so you don’t waste time comparing or negotiating.",
+      "data": [
+        {
+          "propertyType": "1RK",
+          "total": 3250,
+          "transport": 1950,
+          "packing": 813,
+          "loading": 488
+        },
+        {
+          "propertyType": "1Bhk",
+          "total": 3250,
+          "transport": 1950,
+          "packing": 813,
+          "loading": 488
+        },
+        {
+          "propertyType": "2BHK",
+          "total": 3250,
+          "transport": 1950,
+          "packing": 813,
+          "loading": 488
+        },
+        {
+          "propertyType": "3BHK",
+          "total": 3250,
+          "transport": 1950,
+          "packing": 813,
+          "loading": 488
+        }
+      ]
+    },
+    "faqs": [
+      {
+        "question": "How do I book your relocation services in Bangalore?",
+        "answer": "You can book our services online through our website or mobile app. Simply enter your details, choose the type of relocation, and schedule a convenient time."
+      },
+      {
+        "question": "Will my items be safe during the move in Bangalore traffic?",
+        "answer": "Our professional team uses high-quality packing materials and secure handling to ensure your items are protected."
+      },
+      {
+        "question": "Can I track my move across Bangalore or interstate?",
+        "answer": "Yes, we provide real-time tracking for your move so you can monitor the status and location of your belongings anytime."
+      },
+      {
+        "question": "Are there any hidden charges for moves in Bangalore?",
+        "answer": "No, our pricing is fully transparent. You’ll receive a detailed breakdown of costs upfront with no hidden charges."
+      },
+      {
+        "question": "Do you offer insurance for my belongings?",
+        "answer": "Yes, we offer insurance options to cover your belongings against any potential damage or loss during the move."
+      },
+      {
+        "question": "What types of relocation services are available in Bangalore?",
+        "answer": "We offer local and interstate residential moving, office relocation, vehicle transportation, and pet relocation services."
+      }
+    ],
+    "RelocationSection": {
+      "descriptionParagraphs": [
+        "Relocating can be overwhelming, but not with HappyLocate! Whether you’re moving your home, office, or even your pet, we provide seamless, reliable, and affordable relocation services tailored to your needs. With our expertise and commitment to excellence, we make moving hassle-free and stress-free for customers across India. At HappyLocate, we understand that every move is unique, and so are your requirements. That’s why we offer customized relocation solutions designed to suit your timeline, budget, and specific preferences. From carefully packing your belongings to ensuring their safe delivery, we handle every step with precision and care. What sets us apart is our dedication to transparency and trust. With clear pricing, no hidden costs, and real-time tracking, you stay informed and in control throughout the entire relocation process. Whether it’s a local move or an interstate shift, we’ve got you covered with our extensive network and professional team.",
+        "Our team of skilled professionals is trained to handle even the most delicate or complex relocations with ease. From valuable antiques to sensitive office equipment, we ensure everything arrives at its destination in perfect condition. For pet lovers, our specialized pet relocation services ensure your furry friends travel comfortably and safely. With HappyLocate, you don’t just relocate; you start a new chapter without the stress of moving. Let us take care of the details while you focus on what matters most. Whether it’s your first move or your tenth, we guarantee a smooth, efficient, and happy moving experience every time."
+      ],
+      "locations": [
+        "Pet Relocation Bangalore",
+        "Pet Relocation Delhi",
+        "Pet Relocation Mumbai"
+      ]
+    }
   }
 ]
