@@ -40,7 +40,6 @@ const Navbar = () => {
     { label: 'About Us', href: '/about-us' },
     {
       label: 'Services',
-      // href: '/services',
       children: [
         {
           label: 'Packing & Moving',
@@ -59,9 +58,7 @@ const Navbar = () => {
           })),
         },
         { label: 'Pet Taxi', href: '/services/pet-taxi' },
-        { label: 'Storage', href: '/services/storage' },
         { label: 'Vehicle Shifting', href: '/services/vehicle-shifting' },
-        { label: 'Support Services', href: '/services/support-services' },
       ],
     },
     { label: 'Blogs', href: '/blogs' },

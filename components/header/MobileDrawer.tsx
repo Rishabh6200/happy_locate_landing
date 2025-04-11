@@ -103,7 +103,6 @@ const MobileDrawer = ({ mobileOpen, setMobileOpen, navLinks }: MobileDrawerProps
                                             onClick={(e: React.MouseEvent<HTMLDivElement>) => {
                                               if (!child.href) e.preventDefault();
                                               setMobileOpen(false)
-                                             //  if (child.href && !child.subMenu) setMobileOpen(false);
                                             }}
                                             className="text-black justify-between"
                                           >

@@ -1,5 +1,19 @@
 @import "tailwindcss" important;
 
 .custom-fullscreen-drawer {
-   width: 100% !important;
- }
+  width: 100% !important;
+}
+
+.mui-1igu078-MuiInputAdornment-root {
+  margin-top: 18px;
+}
+
+@layer utilities {
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+  .no-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+}

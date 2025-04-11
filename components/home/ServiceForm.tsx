@@ -1,178 +1,254 @@
 "use client";
-import React, { useState } from 'react';
-import { 
-  Card, 
-  Tabs, 
-  Tab,
-  TextField,
-  Button,
-  Radio,
+import React, { ChangeEvent, useState } from 'react';
+import {
+  Box,
+  Divider,
   RadioGroup,
   FormControlLabel,
-  FormControl
+  Radio,
+  TextField,
+  Button,
+  useTheme,
+  Autocomplete,
+  Popper
 } from '@mui/material';
-import LocalShippingIcon from '@mui/icons-material/LocalShipping';
-import PetsIcon from '@mui/icons-material/Pets';
-import AirportShuttleIcon from '@mui/icons-material/AirportShuttle';
-import InventoryIcon from '@mui/icons-material/Inventory';
-import DirectionsCarIcon from '@mui/icons-material/DirectionsCar';
-import SupportIcon from '@mui/icons-material/Support';
+import { DatePicker } from "@mui/x-date-pickers/DatePicker";
+import dayjs from 'dayjs';
+import axios from 'axios';
+import debounce from 'lodash.debounce';
+import ServiceTabs from './form/ServiceTabs';
+import { LocationOn } from '@mui/icons-material';
 
-const services = [
-  { label: 'Packing & Moving', icon: <LocalShippingIcon fontSize="small" /> },
-  { label: 'Pet Relocation', icon: <PetsIcon fontSize="small" /> },
-  { label: 'Pet Taxi', icon: <AirportShuttleIcon fontSize="small" /> },
-  { label: 'Storage', icon: <InventoryIcon fontSize="small" /> },
-  { label: 'Vehicle Shifting', icon: <DirectionsCarIcon fontSize="small" /> },
-  { label: 'Support Services', icon: <SupportIcon fontSize="small" /> }
-];
+const CustomPopper = (props: any) => (
+  <Popper
+    {...props}
+    style={{ width: props.anchorEl?.clientWidth }}
+    placement="bottom-start"
+  />
+);
 
-const additionalServices = [
-  'Visa',
-  'Flight',
-  'Hotel',
-  'House Search Assistance',
-  'Home Interiors',
-  'Short Stays',
-  'Cabs'
+type FormData = {
+  service: string;
+  locationType: string;
+  shifting_from: string;
+  shifting_to: string;
+  shifting_date: Date | null;
+};
+
+type Suggestion = {
+  place_id: string;
+  place_name: string;
+};
+
+const inputList: { label: string; name: keyof FormData }[] = [
+  { label: "Shifting From?", name: "shifting_from" },
+  { label: "Shifting To?", name: 'shifting_to' },
 ];
 
 const ServiceForm = () => {
-  const [selectedService, setSelectedService] = useState(0);
-  const [selectedAdditional, setSelectedAdditional] = useState('Flight');
-  const [formData, setFormData] = useState({
-    name: '',
-    phone: '',
-    shiftingFrom: '',
-    shiftingTo: '',
-    comment: ''
+  const { palette } = useTheme();
+
+  const [formData, setFormData] = useState<FormData>({
+    service: 'packingAndMoving',
+    locationType: "international",
+    shifting_from: '',
+    shifting_to: '',
+    shifting_date: null,
   });
 
-  const handleServiceChange = (_: React.SyntheticEvent, newValue: number) => {
-    setSelectedService(newValue);
+  const [suggestions, setSuggestions] = useState<Suggestion[]>([]);
+  const [selectedFrom, setSelectedFrom] = useState<Suggestion | null>(null);
+  const [selectedTo, setSelectedTo] = useState<Suggestion | null>(null);
+
+  const fetchSuggestions = debounce(async (search: string) => {
+    if (search.length < 4) return;
+    try {
+      const { data } = await axios.get(
+        'https://dashboard.happylocate.com/swift/api/v1/geographical_places/autocomplete',
+        { params: { search_string: search } }
+      );
+      setSuggestions(data.autocomplete_suggestions || []);
+    } catch (error) {
+      console.error("Autocomplete fetch error", error);
+    }
+  }, 300);
+
+  const handleInputChange = (e: ChangeEvent<HTMLInputElement>) => {
+    const { name, value } = e.target;
+    setFormData(prev => ({ ...prev, [name]: value }));
   };
 
-  const handleFormChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    setFormData({
-      ...formData,
-      [e.target.name]: e.target.value
+  const handleDateChange = (date: dayjs.Dayjs | null) => {
+    setFormData((prev) => ({ ...prev, shifting_date: date ? date.toDate() : null }));
+  };
+
+  const handleSubmit = () => {
+    const { service, shifting_date } = formData;
+
+    if (!selectedFrom || !selectedTo || !shifting_date) {
+      alert("Please select valid locations and date.");
+      return;
+    }
+
+    const params = new URLSearchParams({
+      fromCity: selectedFrom.place_name,
+      fromCityPlaceId: selectedFrom.place_id,
+      toCity: selectedTo.place_name,
+      toCityPlaceId: selectedTo.place_id,
+      toDate: dayjs(shifting_date).format('YYYY-MM-DD'),
     });
-  };
 
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    console.log({ selectedService, selectedAdditional, ...formData });
+    let redirectUrl = '';
+
+    switch (service) {
+      case 'packingAndMoving':
+      case 'vehicleShifting':
+        redirectUrl = `https://dashboard.happylocate.com/swift-app/relocations/pam-basic-details?${params}`;
+        break;
+      case 'petRelocation':
+      case 'petTaxi':
+        redirectUrl = `https://dashboard.happylocate.com/swift-app/relocations/pet-basic-details?${params}`;
+        break;
+      default:
+        alert('Unknown service type.');
+        return;
+    }
+
+    window.location.href = redirectUrl;
   };
 
   return (
-    <div className="relative w-full">
-      <Card className="absolute top-[-2.5rem] z-40 w-full shadow-sm">
-        <div className="p-6">
-          {/* Service Tabs */}
-          <div className="w-full overflow-x-auto mb-6">
-            <Tabs
-              value={selectedService}
-              onChange={handleServiceChange}
-              variant="scrollable"
-              scrollButtons="auto"
-              className="min-w-fit inline-flex border border-gray-200 rounded-lg bg-white"
-              TabIndicatorProps={{ style: { display: 'none' } }}
-            >
-              {services.map((service, index) => (
-                <Tab
-                  key={index}
-                  icon={service.icon}
-                  iconPosition="start"
-                  label={service.label}
-                  className={`min-h-[40px] px-4 py-2 text-sm font-medium transition-all duration-200 
-                    ${selectedService === index ? 'bg-blue-600 text-white' : 'bg-white text-gray-800 hover:bg-gray-100'} 
-                    ${index === 0 ? 'rounded-l-lg' : ''} 
-                    ${index === services.length - 1 ? 'rounded-r-lg' : ''} 
-                    border-r border-gray-200 last:border-r-0`}
-                />
-              ))}
-            </Tabs>
-          </div>
-
-          {/* Additional Services Radio Group */}
-          <FormControl component="fieldset" className="w-full mb-6">
+    <div className="absolute w-[93%] lg:w-full z-40 bg-white shadow-lg border border-gray-300 rounded-xl">
+      <div className="p-6 px-7 overflow-x-scroll no-scrollbar max-lg:mr-5">
+        <ServiceTabs
+          value={formData.service}
+          onChange={(value) => setFormData(prev => ({ ...prev, service: value }))}
+        />
+      </div>
+      <Divider />
+      <div className="text-gray-600">
+        <Box className="flex flex-col lg:flex-row items-end gap-4 p-3 px-8 pb-5 bg-white shadow-sm rounded-lg overflow-x-auto whitespace-nowrap">
+          {/* Location Type */}
+          <div className="flex flex-col justify-end max-lg:w-full">
+            <span className="font-semibold text-sm text-gray-800 pb-1">Where?</span>
             <RadioGroup
               row
-              value={selectedAdditional}
-              onChange={(e) => setSelectedAdditional(e.target.value)}
-              className="flex flex-wrap gap-4"
+              name="locationType"
+              value={formData.locationType}
+              onChange={handleInputChange}
+              className="flex"
             >
-              {additionalServices.map((service) => (
-                <FormControlLabel
-                  key={service}
-                  value={service}
-                  control={<Radio size="small" />}
-                  label={service}
-                  className="m-0"
-                />
-              ))}
+              <FormControlLabel value="domestic" control={<Radio />} label={<span className='lg:text-[10px]'>Domestic</span>} />
+              <FormControlLabel value="international" control={<Radio />} label={<span className='lg:text-[10px]'>International</span>} />
             </RadioGroup>
-          </FormControl>
+          </div>
 
-          {/* Form Fields */}
-          <form onSubmit={handleSubmit} className="grid grid-cols-1 md:grid-cols-3 gap-4">
-            <TextField
-              name="name"
-              placeholder="Your Name"
-              value={formData.name}
-              onChange={handleFormChange}
-              variant="outlined"
-              fullWidth
-              size="small"
+          <Divider orientation="vertical" flexItem />
+
+          {/* From & To Autocomplete */}
+          {inputList.map((item, i) => (
+            <React.Fragment key={item.name}>
+              <div className="flex flex-col justify-end lg:py-2 max-lg:w-full">
+                <label htmlFor={item.name} className='font-semibold text-sm text-gray-800 pb-1'>
+                  {item.label}
+                </label>
+                <Autocomplete
+                  freeSolo
+                  options={suggestions}
+                  getOptionLabel={(option) =>
+                    typeof option === 'string' ? option : option.place_name
+                  }
+                  inputValue={formData[item.name] as string}
+                  onInputChange={(event, value, reason) => {
+                    setFormData(prev => ({ ...prev, [item.name]: value }));
+                    fetchSuggestions(value);
+                    if (reason === 'clear') {
+                      if (item.name === 'shifting_from') setSelectedFrom(null);
+                      else if (item.name === 'shifting_to') setSelectedTo(null);
+                    }
+                  }}
+                  onChange={(event, newValue) => {
+                    if (!newValue || typeof newValue === 'string') return;
+                    setFormData(prev => ({ ...prev, [item.name]: newValue.place_name }));
+                    if (item.name === 'shifting_from') setSelectedFrom(newValue);
+                    else if (item.name === 'shifting_to') setSelectedTo(newValue);
+                  }}
+                  PopperComponent={CustomPopper}
+                  renderOption={(props, option) => {
+                    const [bold, ...rest] = option.place_name.split(',');
+                    return (
+                      <li {...props} className="flex items-start gap-2 px-3 py-1.5">
+                        <LocationOn fontSize="small" className="mt-1 text-gray-500" />
+                        <div className="text-sm leading-tight">
+                          <span className="font-semibold">{bold.trim()}</span>
+                          {rest.length > 0 && (
+                            <span className="text-gray-500">,{rest.join(',')}</span>
+                          )}
+                        </div>
+                      </li>
+                    );
+                  }}
+                  renderInput={(params) => (
+                    <TextField
+                      {...params}
+                      variant="filled"
+                      placeholder={item.label}
+                      className="bg-gray-100 rounded-md min-w-[180px]"
+                      InputProps={{
+                        ...params.InputProps,
+                        disableUnderline: true,
+                        className: 'h-10 p-1 items-center',
+                      }}
+                    />
+                  )}
+                />
+              </div>
+              {i !== inputList.length - 1 && <Divider orientation="vertical" flexItem />}
+            </React.Fragment>
+          ))}
+
+          <Divider orientation="vertical" flexItem />
+
+          {/* Date Picker */}
+          <div className="flex flex-col justify-end lg:py-2 max-lg:w-full">
+            <label htmlFor="shifting_date" className='font-semibold text-sm text-gray-800 pb-1'>Shifting Date</label>
+            <DatePicker
+              value={formData.shifting_date ? dayjs(formData.shifting_date) : null}
+              onChange={handleDateChange}
+              slotProps={{
+                textField: {
+                  placeholder: "Choose Dates",
+                  variant: "filled",
+                  fullWidth: true,
+                  className: "bg-gray-100 rounded-md min-w-[180px]",
+                  InputProps: {
+                    disableUnderline: true,
+                    classes: { root: "h-10 flex items-center pb-4" },
+                  },
+                  slotProps: { input: { className: "pl-3" } },
+                },
+              }}
             />
-            <TextField
-              name="phone"
-              placeholder="Phone No."
-              value={formData.phone}
-              onChange={handleFormChange}
-              variant="outlined"
-              fullWidth
-              size="small"
-            />
-            <TextField
-              name="shiftingFrom"
-              placeholder="Shifting From?"
-              value={formData.shiftingFrom}
-              onChange={handleFormChange}
-              variant="outlined"
-              fullWidth
-              size="small"
-            />
-            <TextField
-              name="shiftingTo"
-              placeholder="Shifting To?"
-              value={formData.shiftingTo}
-              onChange={handleFormChange}
-              variant="outlined"
-              fullWidth
-              size="small"
-            />
-            <TextField
-              name="comment"
-              placeholder="Want to do what?"
-              value={formData.comment}
-              onChange={handleFormChange}
-              variant="outlined"
-              fullWidth
-              size="small"
-            />
+          </div>
+
+          <Divider orientation="vertical" flexItem />
+
+          {/* Submit Button */}
+          <div className="max-lg:w-full">
             <Button
-              type="submit"
               variant="contained"
-              className="bg-blue-600 hover:bg-blue-700 text-white h-10"
+              fullWidth
+              onClick={handleSubmit}
+              className="text-white rounded-md px-6 lg:py-2 lg:ml-2 lg:mb-2 normal-case shadow-none hover:opacity-80"
+              style={{ backgroundColor: palette.primary.main }}
             >
               Submit
             </Button>
-          </form>
-        </div>
-      </Card>
+          </div>
+        </Box>
+      </div>
     </div>
   );
 };
 
-export default ServiceForm; 
+export default ServiceForm;

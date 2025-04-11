@@ -7,7 +7,7 @@ const HeroSection = () => {
   const { palette } = useTheme();
 
   return (
-    <section className="bg-white min-h-[50vh] flex items-center py-6 px-4 md:px-0">
+    <section className="bg-white h-[60vh] sm:h-[70vh] lg:h-[50vh] flex items-start py-10 px-4 md:px-0">
       <Container
         maxWidth="lg"
         className="grid grid-cols-1 md:grid-cols-2 items-center gap-6 md:gap-12"
