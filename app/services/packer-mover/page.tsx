@@ -50,17 +50,22 @@ const Page = () => {
             services={[
                {
                   title: 'House Shifting',
-                  desc: 'Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint.',
+                  desc: 'Safe and seamless moving for apartments, villas, and independent homes.',
                   icon: '/images/service-box.svg',
                },
                {
-                  title: 'Assets Delivery',
-                  desc: 'Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint.',
+                  title: 'Office Relocation',
+                  desc: 'Efficient business moves to minimize downtime.',
                   icon: '/images/service-box.svg',
                },
                {
-                  title: 'Office Shifting',
-                  desc: 'Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint.',
+                  title: 'Vehicle Shifting',
+                  desc: 'Secure car and bike transport services across India. Asset Delivery - Ensuring your valuables reach their destination safely and on time.',
+                  icon: '/images/service-box.svg',
+               },
+               {
+                  title: 'Vehicle Shifting',
+                  desc: 'International Relocations',
                   icon: '/images/service-box.svg',
                },
             ]}
@@ -69,27 +74,23 @@ const Page = () => {
          <FAQ faqs={[
             {
                question: 'Do you offer insurance for household items?',
-               answer: 'Yes, we offer insurance options to ensure your household items are protected throughout the relocation process.',
+               answer: 'Yes, we offer transit insurance to safeguard your belongings against unforeseen events like damage, theft, or accidents during the move.',
             },
             {
                question: 'Will you help with unpacking and setting up at the new location?',
-               answer: 'Our professional team uses high-quality packing materials and secure handling to ensure your items are protected.',
-            },
-            {
-               question: 'Are packing materials included in the charges?',
-               answer: 'Yes, standard packing materials are included in our pricing. Any specialized materials may incur an additional cost.',
+               answer: 'Absolutely! Our team provides end-to-end services including unpacking, furniture assembly, and setup at your new home upon request.',
             },
             {
                question: 'What if my new location is not ready on the same day?',
-               answer: 'We provide short-term storage solutions in case your new location is not ready on moving day.',
+               answer: 'We provide short-term warehousing and safe storage options, so you don’t have to worry about delays in shifting or possession dates.',
             },
             {
-               question: 'Do you provide insurance for my belongings?',
-               answer: 'Absolutely. We offer various insurance plans to match your needs and give you peace of mind during the move.',
+               question: 'Are packing materials included in the charges?',
+               answer: 'Yes, we use high-quality, industry-grade packing materials, and the cost is either included in the overall package or shared transparently upfront.',
             },
             {
                question: 'What if some of my items are damaged during transit?',
-               answer: 'In the rare event of damage, we will assist with filing a claim and ensure fair compensation through our insurance policy.',
+               answer: 'In the unlikely event of damage, we offer insurance claims assistance and ensure resolution as per the insured value and damage report.',
             }
          ]}
          />
@@ -102,12 +103,14 @@ const Page = () => {
                "Our team of skilled professionals is trained to handle even the most delicate or complex relocations with ease. From valuable antiques to sensitive office equipment, we ensure everything arrives at its destination in perfect condition. For pet lovers, our specialized pet relocation services ensure your furry friends travel comfortably and safely. With HappyLocate, you don’t just relocate; you start a new chapter without the stress of moving. Let us take care of the details while you focus on what matters most. Whether it’s your first move or your tenth, we guarantee a smooth, efficient, and happy moving experience every time.",
             ]}
             locations={[
-               "Packer & Mover Mumbai", "Packer & Mover Mumbai", "Packer & Mover Mumbai", "Packer & Mover Mumbai",
-               "Relocation Delhi", "Relocation Chennai", "Relocation Hyderabad", "Relocation Kolkata",
-               "Relocation Mumbai", "Relocation Pune", "Relocation Bangalore", "Relocation Mysore",
-               "Relocation Delhi", "Relocation Chennai", "Relocation Hyderabad", "Relocation Kolkata",
-               "Relocation Mumbai", "Relocation Pune", "Relocation Bangalore", "Relocation Mysore",
-               "Relocation Delhi", "Relocation Chennai", "Relocation Hyderabad", "Relocation Kolkata",
+               "Packers & Movers Bangalore", "Packers & Movers Bangalore", "Packers & Movers Bangalore", "Packers & Movers Bangalore",
+               "Packers & Movers Delhi", "Packers & Movers Delhi", "Packers & Movers Delhi", "Packers & Movers Delhi",
+               "Packers & Movers Hyderabad", "Packers & Movers Hyderabad", "Packers & Movers Hyderabad", "Packers & Movers Hyderabad",
+               "Packers & Movers Mumbai", "Packers & Movers Mumbai", "Packers & Movers Mumbai", "Packers & Movers Mumbai",
+               "Packers & Movers Pune", "Packers & Movers Pune", "Packers & Movers Pune", "Packers & Movers Pune",
+               "Packers & Movers Chennai", "Packers & Movers Chennai", "Packers & Movers Chennai", "Packers & Movers Chennai",
+               "Packers & Movers Kolkata", "Packers & Movers Kolkata", "Packers & Movers Kolkata", "Packers & Movers Kolkata",
+               "Packers & Movers Ahmedabad", "Packers & Movers Ahmedabad", "Packers & Movers Ahmedabad", "Packers & Movers Ahmedabad",
             ]}
          />
       </>

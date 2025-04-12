@@ -59,7 +59,7 @@ const CarAboutSection = () => {
                className="text-white px-8 py-3 my-2 rounded-full w-fit normal-case text-sm shadow-md"
                style={{ backgroundColor: palette.primary.main }}
             >
-               Get a Free Quote
+               Get Instant Quote
             </Button>
          </div>
       </section>

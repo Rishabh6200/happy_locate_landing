@@ -8,9 +8,9 @@ import HowItWorks from '@/components/services/HowItWorks';
 import ServicesOffered from '@/components/services/ServicesOffered';
 import PricingTable from '@/components/services/PackersMoving/PricingTable';
 import FAQ from '@/components/common/FAQ';
-import TestimonialCarousel from '@/components/home/Testimonial';
 import BlogSection from '@/components/home/BlogSection';
 import RelocationSection from '@/components/home/RelocationSection';
+import Testimonial from '@/components/common/Testimonial';
 
 interface PageProps {
   params: Promise<{
@@ -56,7 +56,9 @@ const Page: FC<PageProps> = async ({ params }) => {
       <FAQ
         faqs={service.faqs}
       />
-      <TestimonialCarousel />
+      <Testimonial
+        testimonials={service.Testimonial}
+      />
       <BlogSection />
       <RelocationSection
         descriptionParagraphs={service.RelocationSection.descriptionParagraphs}

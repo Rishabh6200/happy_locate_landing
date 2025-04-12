@@ -8,7 +8,7 @@ import ServicesOffered from '@/components/services/ServicesOffered'
 import FAQ from '@/components/common/FAQ'
 import RelocationSection from '@/components/home/RelocationSection'
 import BlogSection from '@/components/home/BlogSection'
-import TestimonialCarousel from '@/components/home/Testimonial'
+import Testimonial from '@/components/common/Testimonial'
 
 const Page = () => {
    return (
@@ -35,16 +35,16 @@ const Page = () => {
          <StatsSection
             stats={[
                {
-                  "label": "Best rate in the industry",
+                  "label": "Google Rating",
                   "value": "4.5"
-               },
-               {
-                  "label": "Insurance Available",
-                  "value": "72hr"
                },
                {
                   "label": "Pin codes served",
                   "value": "15000+"
+               },
+               {
+                  "label": "Damage Resolution Guarantee",
+                  "value": "72hr"
                },
                {
                   "label": "Transparent Pricing",
@@ -82,21 +82,41 @@ const Page = () => {
          <CarAboutSection />
          <ServicesOffered
             buttonText="Get a Free Quote"
-            heading="Services Offered By Top Packers And Movers In Bangalore"
+            heading="Things to Consider When Hiring Car Shifting Services"
             services={[
                {
-                  "title": "House Shifting",
-                  "desc": "Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint.",
+                  "title": "Service Availability & Coverage",
+                  "desc": "Check if the provider operates in both your pickup and drop-off locations. Nationwide coverage ensures better service and fewer delays.",
                   "icon": "/images/service-box.svg"
                },
                {
-                  "title": "Office Shifting",
-                  "desc": "Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint.",
+                  "title": "Proper Documentation & Permits",
+                  "desc": "Ensure the transporter provides a Vehicle Condition Report before and after transit. Also, verify if they have the required permits for intercity or interstate transport.",
                   "icon": "/images/service-box.svg"
                },
                {
-                  "title": "Asset Delivery",
-                  "desc": "Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint.",
+                  "title": "Estimated Delivery Time",
+                  "desc": "Ask for a realistic timeline and compare it with industry standards. Be cautious of promises that seem too fast, as they might compromise safety.",
+                  "icon": "/images/service-box.svg"
+               },
+               {
+                  "title": "Fleet Quality & Handling Process",
+                  "desc": "Find out if the company uses well-maintained transport carriers and trained handlers. Poor fleet conditions increase the risk of damage.",
+                  "icon": "/images/service-box.svg"
+               },
+               {
+                  "title": "Cancellation & Refund Policy",
+                  "desc": "Understand the cancellation policy—whether you get a full/partial refund if you need to cancel or reschedule.",
+                  "icon": "/images/service-box.svg"
+               },
+               {
+                  "title": "Loading & Unloading Safety",
+                  "desc": "Ensure the service provider uses ramp lifts and soft straps to prevent damage during loading and unloading.",
+                  "icon": "/images/service-box.svg"
+               },
+               {
+                  "title": "Customer Support Accessibility",
+                  "desc": "A responsive support team via phone, email, or chat is essential in case you need urgent assistance.",
                   "icon": "/images/service-box.svg"
                }
             ]}
@@ -105,37 +125,77 @@ const Page = () => {
          <FAQ
             faqs={[
                {
-                  "question": "How do I book your relocation services?",
-                  "answer": "You can typically book our relocation services by getting a free instant quote through our website or by contacting us directly via phone. You'll need to provide details such as your origin, destination, preferred moving date, and a list of items to be moved. Once you receive the quote and are satisfied, you can confirm your booking."
+                  "question": "How do I book your car relocation services?",
+                  "answer": "You can easily book online through our website by entering your pickup and drop locations, vehicle details, and preferred date. You’ll get an instant quote and the option to confirm your booking in just a few clicks."
                },
                {
-                  "question": "How can I ensure my items are safe during the move?",
-                  "answer": "Our professional team uses high-quality packing materials and secure handling techniques to ensure your items are protected. We recommend packing fragile items with extra care using bubble wrap and packing paper, and clearly labeling all boxes, especially those containing delicate items. You can also consider full-value protection insurance for added peace of mind.",
+                  "question": "Will my car be insured during the move?",
+                  "answer": "Yes. We provide comprehensive transit insurance that covers any unforeseen damage during transportation. You’ll receive the insurance details before your car is picked up."
                },
                {
-                  "question": "Do you provide real-time tracking for my move?",
-                  "answer": "Yes, we provide real-time tracking for your move. Once your belongings are in transit, you will receive updates on their location, allowing you to stay informed throughout the relocation process. This provides added security and helps you plan for the arrival at your new destination."
+                  "question": "How can I track my vehicle in real-time?",
+                  "answer": "Once your car is dispatched, you’ll receive regular location updates. A dedicated relocation manager is also assigned for real-time updates and support."
                },
                {
-                  "question": "Are there any hidden charges?",
-                  "answer": "We pride ourselves on transparency and aim to provide a clear and comprehensive quote upfront. However, some factors can influence the final cost, such as additional services requested (e.g., appliance installation, furniture assembly), changes in inventory, or unforeseen difficulties at the origin or destination (e.g., long carry distances, stairs). We will always communicate any potential additional charges to you beforehand for your approval.",
+                  "question": "Are there any hidden or surprise charges?",
+                  "answer": "None at all. Our pricing is transparent. The quote includes everything—pickup, transit, taxes, and insurance. You pay exactly what you see."
                },
                {
-                  "question": "Do you provide insurance for my belongings?",
-                  "answer": "Yes, we offer different insurance options to cover your belongings during the relocation. We typically provide a basic carrier liability, but you can also opt for full-value protection for more comprehensive coverage. We recommend discussing the various insurance plans with our representatives to choose the one that best suits your needs and the value of your items.",
+                  "question": "How long will it take to relocate my car?",
+                  "answer": "Delivery timelines vary based on distance and route. On average:\nMetro-to-metro: 3–5 days\nTier 1 to Tier 2/3: 4–7 days. We’ll give you an accurate timeline at the time of booking."
                },
                {
-                  "question": "What types of relocation services do you offer?",
-                  "answer": "We offer a comprehensive range of relocation services, including residential and commercial moves, local and long-distance relocations (within the country and internationally), packing and unpacking services, furniture disassembly and reassembly, vehicle transportation, storage solutions, and specialized handling for delicate or high-value items."
+                  "question": "Can I keep personal belongings in the car?",
+                  "answer": "For safety and legal reasons, we recommend removing all personal items. Only essential tools (jack, stepney, etc.) are allowed."
                },
                {
-                  "question": "How far in advance should I book my move?",
-                  "answer": "It's generally recommended to book your move at least 4-8 weeks in advance, especially if you are moving during peak season (summer months) or on a weekend. For long-distance or international moves, booking 2-3 months in advance is advisable to ensure availability and allow ample time for planning. However, we will always do our best to accommodate your needs, even for last-minute moves, depending on our schedule."
+                  "question": "What kind of carriers do you use?",
+                  "answer": "We offer both open and enclosed car carriers. Enclosed carriers are recommended for luxury or premium cars for better protection from weather and road debris."
+               },
+               {
+                  "question": "What happens if my car gets damaged in transit?",
+                  "answer": "While damages are rare, we offer a 72-hour resolution window with full claim support through our insurance partner. You’re covered."
+               },
+               {
+                  "question": "Do you offer door-to-door pickup and delivery?",
+                  "answer": "Yes! We provide fully door-to-door service in over 15,000+ pin codes across India. No terminal visits or extra hassle."
+               },
+               {
+                  "question": "Who do I contact if I need help during the move?",
+                  "answer": "You’ll be assigned a personal relocation manager for updates and assistance throughout the journey."
                }
             ]}
          />
 
-         <TestimonialCarousel />
+         <Testimonial
+            testimonials={[
+               {
+                  "title": "Moved My Sedan Without a Scratch!",
+                  "review": "I was super anxious about moving my car from Hyderabad to Delhi, but HappyLocate made it seamless. I could track everything, and the car arrived on time — no damage at all!",
+                  "author": "Meenal Sharma",
+                  "type": "Delhi",
+
+               },
+               {
+                  "title": "Trustworthy & Transparent Pricing",
+                  "review": "I compared 3 other services, but HappyLocate was the only one that gave me a clear quote with no hidden charges. My Jeep Compass reached from Mumbai to Bangalore within 4 days.",
+                  "author": "Siddharth Jain",
+                  "type": "Bangalore"
+               },
+               {
+                  "title": "Responsive Support Team",
+                  "review": "The dedicated manager kept me informed at every stage. Even when I changed the pickup time, they adjusted without any issues. Best customer service I’ve seen in logistics.",
+                  "author": "Ritika Mehra",
+                  "type": "Pune"
+               },
+               {
+                  "title": "Safe Transport for My SUV",
+                  "review": "I chose the enclosed carrier option, and it was worth it! My Fortuner arrived in perfect shape. Will definitely recommend HappyLocate to friends.",
+                  "author": "Ravi Teja",
+                  "type": "Hyderabad"
+               }
+            ]}
+         />
          <BlogSection />
 
          <RelocationSection

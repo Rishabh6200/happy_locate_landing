@@ -51,8 +51,7 @@ const Page = () => {
         faqs={[
           {
             question: "What is a pet taxi service?",
-            answer:
-              "A pet taxi service offers safe and reliable transportation for your pets to places like vet clinics, grooming salons, parks, or airports.",
+            answer: "A pet taxi is a dedicated transport service for pets—offering safe, stress-free travel to places like vets, airports, grooming centers, boarding facilities, or even between cities.",
           },
           {
             question: "Is your pet taxi service available in all cities?",
@@ -61,13 +60,11 @@ const Page = () => {
           },
           {
             question: "Is a human companion allowed to travel with the pet?",
-            answer:
-              "Yes, one human companion is usually allowed to accompany the pet during the ride, depending on vehicle availability and safety guidelines.",
+            answer: "Yes! In most of our vehicles, one pet parent can accompany their pet. Please inform us in advance so we can assign the right vehicle.",
           },
           {
             question: "How do you ensure my pet’s safety during the ride?",
-            answer:
-              "Our vehicles are equipped with pet seat belts, carriers, and trained handlers to ensure your pet's comfort and safety throughout the journey.",
+            answer: "Our vehicles are sanitized, climate-controlled, and operated by trained pet handlers. We also provide seat harnesses, crates (if needed), and real-time tracking for complete peace of mind.",
           },
         ]}
       />

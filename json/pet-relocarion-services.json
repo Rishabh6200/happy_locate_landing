@@ -1,0 +1,18 @@
+[
+   {
+      "slug": "usa",
+      "breadcrumb": "Pet Relocatoin",
+      "title": "Pet Relocation Services In USA",
+      "intro": {
+         "tagline": "About Service",
+         "headline": "Planning to relocate your pet to or from the USA?",
+         "description": "Whether you’re flying into cities like New York, Los Angeles, or Houston, or heading out from the States, HappyLocate ensures a stress-free, USDA-compliant journey for your furry companion. With complex documentation and airline regulations, it’s crucial to get it right. That’s where we come in.",
+         "content": "",
+         "cta": {
+           "text": "Get a Free Quote",
+           "link": "#"
+         },
+         "image": "/path-to-image"
+       }
+   }
+]

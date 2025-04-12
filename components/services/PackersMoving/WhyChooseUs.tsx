@@ -9,8 +9,8 @@ const features = [
       highlighted: false,
    },
    {
-      title: 'Office Relocation',
-      description: 'Efficient business moves to minimize downtime.',
+      title: 'Verified Results',
+      description: 'With 10000+ successful relocations and 4.8+ average ratings across platforms, our results speak louder than promises.',
       highlighted: true,
    },
    {
@@ -75,6 +75,7 @@ const WhyChooseUs = () => {
                               ? `text-white bg-[${palette.primary.main}]`
                               : `text-[${palette.primary.main}] bg-white`
                               }`}
+                           color='primary'
                         />
                         <East className={item.highlighted ? 'text-white' : 'text-gray-700'} />
                      </div>

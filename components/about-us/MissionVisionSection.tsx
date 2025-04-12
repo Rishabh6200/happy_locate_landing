@@ -70,7 +70,7 @@ const MissionVisionSection = () => {
                   </p>
                ) : (
                   <p className="text-gray-600">
-                     Our vision is to revolutionize relocation by setting global standards in quality, customer satisfaction, and trust—empowering people to relocate without stress.
+                     To become the most trusted Relocation partner globally - Empowering stress-free moves with Innovation, Empathy, and excellence at every step.
                   </p>
                )}
             </div>
