@@ -8,6 +8,7 @@ import {
   Box,
   IconButton,
   Container,
+  useTheme,
 } from '@mui/material';
 import MenuIcon from '@mui/icons-material/Menu';
 import Image from 'next/image';
@@ -20,6 +21,7 @@ import MobileDrawer from './MobileDrawer';
 
 const Navbar = () => {
   const pathname = usePathname();
+  const { palette } = useTheme();
   const [mobileOpen, setMobileOpen] = useState(false);
   const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
   const [servicesOpen, setServicesOpen] = useState(false);
@@ -207,28 +209,29 @@ const Navbar = () => {
           >
             <Button
               className={`${pathname === '/'
-                ? 'text-white bg-primary hover:opacity-80'
+                ? `text-white bg-[${palette.primary.main}] hover:opacity-80`
                 : 'bg-white text-primary hover:bg-gray-100'
                 } font-bold capitalize py-2 px-8 rounded-full`}
               endIcon={<KeyboardArrowDown className="h-7 w-7" />}
             >
               Sign Up
             </Button>
-
-            {signUpOpen && (
-              <div className="absolute top-full left-1/2 -translate-x-1/2 mt-2 bg-white shadow-lg rounded-md py-2 min-w-[200px] z-50">
-                {signupLinks.map((item, i) => (
-                  <Link
-                    key={i}
-                    href={item.href}
-                    onClick={closeAllDropdowns}
-                    className="block px-4 py-2 text-black hover:bg-gray-100"
-                  >
-                    {item.label}
-                  </Link>
-                ))}
-              </div>
-            )}
+            <div className="pt-2">
+              {signUpOpen && (
+                <div className="absolute top-full left-1/2 -translate-x-1/2 bg-white shadow-lg rounded-md py-2 min-w-[200px] z-50">
+                  {signupLinks.map((item, i) => (
+                    <Link
+                      key={i}
+                      href={item.href}
+                      onClick={closeAllDropdowns}
+                      className="block px-4 py-2 text-black hover:bg-gray-100"
+                    >
+                      {item.label}
+                    </Link>
+                  ))}
+                </div>
+              )}
+            </div>
           </div>
 
           <IconButton
