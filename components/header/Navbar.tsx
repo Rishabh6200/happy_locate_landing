@@ -68,10 +68,10 @@ const Navbar = () => {
   ];
 
   const signupLinks = [
-    { label: 'Customer Login', href: '/about-us' },
-    { label: 'Partner Login', href: '/about-us' },
-    { label: 'Corporate Login', href: '/about-us' },
-    { label: 'Affiliate Login', href: '/about-us' },
+    { label: 'Customer Login', href: 'https://dashboard.happylocate.com/login' },
+    { label: 'Partner Login', href: 'https://dashboard.happylocate.com/packers-and-movers-vendor/login' },
+    { label: 'Corporate Login', href: 'https://dashboard.happylocate.com/corporates/login' },
+    { label: 'Affiliate Login', href: 'https://dashboard.happylocate.com/affiliate/login' },
   ];
 
   const navTextColor = pathname === '/' ? 'text-black' : 'text-white';
@@ -252,6 +252,7 @@ const Navbar = () => {
                       href={item.href}
                       onClick={closeAllDropdowns}
                       className="block px-4 py-2 text-black hover:bg-gray-100"
+                      target='_blank'
                     >
                       {item.label}
                     </Link>
@@ -283,63 +284,3 @@ const Navbar = () => {
 };
 
 export default Navbar;
-
-
-{/* {servicesOpen && (
-                    <div className="absolute top-full left-0 pt-2">
-                      <div
-                        className="absolute top-5 left-8 -translate-y-full w-4 h-4 rotate-45 shadow-md -z-50"
-                        style={{ backgroundColor: palette.background.paper }}
-                      />
-                      <div className=" bg-white shadow-lg rounded-md z-50 py-2 min-w-[220px]">
-                        {link.children.map((child, i) =>
-                          child.subMenu ? (
-                            <div
-                              key={i}
-                              className="relative group"
-                              onMouseEnter={() => setSubMenuOpen(i)}
-                              onMouseLeave={() => setSubMenuOpen(null)}
-                            >
-                              <Link
-                                href={child.href ?? '#'}
-                                onClick={closeAllDropdowns}
-                                className="flex justify-between items-center w-full px-4 py-2 text-black hover:bg-gray-100"
-                              >
-                                {child.label}
-                                <East fontSize="small" />
-                              </Link>
-                              {subMenuOpen === i && (
-                                <div className="absolute top-0 left-full pl-2.5">
-                                  <div
-                                    className="absolute top-3 left-1.5 w-4 h-4 rotate-45  -z-50"
-                                    style={{ backgroundColor: palette.background.paper }}
-                                  />
-                                  <div className="bg-white shadow-lg rounded-md py-2 min-w-[200px]">
-                                    {child.subMenu.map((item, j) => (
-                                      <Link
-                                        key={j}
-                                        href={item.href}
-                                        onClick={closeAllDropdowns}
-                                        className="block px-4 py-2 text-black hover:bg-gray-100 whitespace-nowrap"
-                                      >
-                                        {item.label}
-                                      </Link>
-                                    ))}
-                                  </div>
-                                </div>
-                              )}
-                            </div>
-                          ) : (
-                            <Link
-                              key={i}
-                              href={child.href}
-                              onClick={closeAllDropdowns}
-                              className="block px-4 py-2 text-black hover:bg-gray-100"
-                            >
-                              {child.label}
-                            </Link>
-                          )
-                        )}
-                      </div>
-                    </div>
-                  )} */}
