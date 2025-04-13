@@ -5,7 +5,7 @@
 }
 
 .mui-1igu078-MuiInputAdornment-root {
-  margin-top: 18px;
+  margin-top: 18px !important;
 }
 
 @layer utilities {
