@@ -5,6 +5,7 @@ import {
    ListItemText,
    Collapse,
    IconButton,
+   Button,
 } from '@mui/material';
 import { Close, Add, Remove } from '@mui/icons-material';
 import Link from 'next/link';
@@ -32,10 +33,15 @@ interface MobileDrawerProps {
    mobileOpen: boolean;
    setMobileOpen: (open: boolean) => void;
    navLinks: NavLink[];
+   signupLinks: {
+      label: string;
+      href: string;
+   }[]
 }
 
-const MobileDrawer = ({ mobileOpen, setMobileOpen, navLinks }: MobileDrawerProps) => {
+const MobileDrawer = ({ mobileOpen, setMobileOpen, navLinks, signupLinks }: MobileDrawerProps) => {
    const [openMenus, setOpenMenus] = useState<{ [key: string]: boolean }>({});
+   const [showSignupLinks, setShowSignupLinks] = useState(false);
 
    const toggleMenu = (label: string) => {
       setOpenMenus((prev) => ({
@@ -70,45 +76,45 @@ const MobileDrawer = ({ mobileOpen, setMobileOpen, navLinks }: MobileDrawerProps
                         </ListItem>
                      ) : (
                         <>
-                              <ListItem
-                                component={link.href ? (Link as React.ElementType) : 'div'}
-                                href={link.href}
-                                onClick={(e: React.MouseEvent<HTMLDivElement>) => {
-                                  if (!link.href) e.preventDefault();
-                                  if (link.href) setMobileOpen(false);
-                                }}
-                                className="text-black justify-between"
-                              >
-                                <ListItemText primary={link.label} />
-                                <IconButton
-                                  edge="end"
-                                  size="small"
-                                  onClick={(e: React.MouseEvent<HTMLButtonElement>) => {
+                           <ListItem
+                              component={link.href ? (Link as React.ElementType) : 'div'}
+                              href={link.href}
+                              onClick={(e: React.MouseEvent<HTMLDivElement>) => {
+                                 if (!link.href) e.preventDefault();
+                                 if (link.href) setMobileOpen(false);
+                              }}
+                              className="text-black justify-between"
+                           >
+                              <ListItemText primary={link.label} />
+                              <IconButton
+                                 edge="end"
+                                 size="small"
+                                 onClick={(e: React.MouseEvent<HTMLButtonElement>) => {
                                     e.stopPropagation();
                                     e.preventDefault(); // prevent drawer close on toggle
                                     toggleMenu(link.label);
-                                  }}
-                                >
-                                  {openMenus[link.label] ? <Remove /> : <Add />}
-                                </IconButton>
-                              </ListItem>
+                                 }}
+                              >
+                                 {openMenus[link.label] ? <Remove /> : <Add />}
+                              </IconButton>
+                           </ListItem>
 
                            <Collapse in={openMenus[link.label]} timeout="auto" unmountOnExit>
                               <List component="div" disablePadding className="pl-4">
                                  {link.children.map((child) => (
                                     <div key={child.label}>
-                                          <ListItem
-                                            component={child.href ? (Link as React.ElementType) : 'div'}
-                                            href={child.href}
-                                            onClick={(e: React.MouseEvent<HTMLDivElement>) => {
-                                              if (!child.href) e.preventDefault();
-                                              setMobileOpen(false)
-                                            }}
-                                            className="text-black justify-between"
-                                          >
-                                            <ListItemText primary={child.label} />
-                                            {child.subMenu && (
-                                              <IconButton
+                                       <ListItem
+                                          component={child.href ? (Link as React.ElementType) : 'div'}
+                                          href={child.href}
+                                          onClick={(e: React.MouseEvent<HTMLDivElement>) => {
+                                             if (!child.href) e.preventDefault();
+                                             setMobileOpen(false)
+                                          }}
+                                          className="text-black justify-between"
+                                       >
+                                          <ListItemText primary={child.label} />
+                                          {child.subMenu && (
+                                             <IconButton
                                                 edge="end"
                                                 size="small"
                                                 onClick={(e: React.MouseEvent<HTMLButtonElement>) => {
@@ -116,11 +122,11 @@ const MobileDrawer = ({ mobileOpen, setMobileOpen, navLinks }: MobileDrawerProps
                                                    e.preventDefault(); // prevent drawer close
                                                    toggleMenu(child.label);
                                                 }}
-                                              >
+                                             >
                                                 {openMenus[child.label] ? <Remove /> : <Add />}
-                                              </IconButton>
-                                            )}
-                                          </ListItem>
+                                             </IconButton>
+                                          )}
+                                       </ListItem>
 
                                        {child.subMenu && (
                                           <Collapse in={openMenus[child.label]} timeout="auto" unmountOnExit>
@@ -148,6 +154,32 @@ const MobileDrawer = ({ mobileOpen, setMobileOpen, navLinks }: MobileDrawerProps
                   </div>
                ))}
             </List>
+
+            <Button
+               variant="contained"
+               className="mx-5 my-2 flex justify-between items-center"
+               onClick={() => setShowSignupLinks(!showSignupLinks)}
+               endIcon={showSignupLinks ? <Remove /> : <Add />}
+            >
+               Sign In
+            </Button>
+
+            <Collapse in={showSignupLinks} timeout="auto" unmountOnExit>
+               <List component="div" disablePadding className="pl-6">
+                  {signupLinks.map((link) => (
+                     <ListItem
+                        key={link.label}
+                        component={Link}
+                        href={link.href}
+                        onClick={() => setMobileOpen(false)}
+                        className="text-black"
+                     >
+                        <ListItemText primary={link.label} />
+                     </ListItem>
+                  ))}
+               </List>
+            </Collapse>
+
          </div>
       </Drawer>
    );

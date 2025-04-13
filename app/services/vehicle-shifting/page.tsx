@@ -27,7 +27,7 @@ const Page = () => {
                   "Moving your car from one city to another? Let HappyLocate handle it with precision, care, and complete peace of mind. From sedans to SUVs, we ensure smooth and damage-free delivery with live tracking, enclosed carriers, and a dedicated relocation manager at your service.",
                cta: {
                   text: "Get a Free Quote",
-                  link: "#",
+                  link: "https://dashboard.happylocate.com/swift-app/relocations/pet-basic-details",
                },
                image: "/images/car_shiping.svg",
             }}

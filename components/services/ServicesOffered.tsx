@@ -3,6 +3,7 @@
 import useEmblaCarousel from 'embla-carousel-react';
 import { Button, Card, CardContent, Container, Typography } from '@mui/material';
 import Image from 'next/image';
+import Link from 'next/link';
 
 type ServiceItem = {
   title: string;
@@ -35,7 +36,7 @@ const ServicesOffered = ({ heading, buttonText, services }: ServicesOfferedProps
                     </Typography>
                   )}
                   {buttonText && (
-                    <Button variant="contained" color="primary" className="rounded-full w-fit">
+                    <Button LinkComponent={Link} href='https://dashboard.happylocate.com/swift-app/relocations/pet-basic-details' variant="contained" color="primary" className="rounded-full w-fit">
                       {buttonText}
                     </Button>
                   )}

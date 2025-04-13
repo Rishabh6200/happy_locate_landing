@@ -10,6 +10,7 @@ import {
    Container
 } from '@mui/material';
 import { ArrowOutward } from '@mui/icons-material';
+import Link from 'next/link';
 
 const blogPosts = [
    {
@@ -56,6 +57,9 @@ const BlogSection = () => {
                      size="medium"
                      className="rounded-full px-6 gap-2 capitalize font-bold bg-white max-sm:hidden"
                      style={{ color: palette.primary.main }}
+                     LinkComponent={Link}
+                     href='https://www.happylocate.com/blog'
+                     target='_blank'
                      endIcon={
                         <ArrowOutward
                            className="h-8 w-8 p-1 -mr-2 rounded-full text-white"
@@ -107,6 +111,9 @@ const BlogSection = () => {
             </div>
             <div className="flex justify-center my-5 sm:hidden">
                <Button
+                  LinkComponent={Link}
+                  href='https://www.happylocate.com/blog'
+                  target='_blank'
                   variant="contained"
                   size="medium"
                   className="absolute rounded-full px-6 gap-2 capitalize font-bold text-lg"

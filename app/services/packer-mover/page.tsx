@@ -95,7 +95,38 @@ const Page = () => {
          ]}
          />
 
-         <TestimonialCarousel />
+         <TestimonialCarousel
+            testimonials={[
+               {
+                  "id": 1,
+                  "name": "Thammaiah Aiyappa",
+                  "designation": "",
+                  "image": "/images/testimonial-man.svg",
+                  "description": "I used HappyLocate when I moved houses within Bangalore. They allocate each person a POC from the company who liases with the moving partner. The team arrived on time, packed all my things properly (cling wrap for breakables & blankets for heavy stuff) and moved and unpacked all my things with care. The team was super communicative and had constant updates. The on ground team was super careful and helpful. They even moved a few extra items that were not in the original list."
+               },
+               {
+                  "id": 2,
+                  "name": "Tushar Bhanushali",
+                  "designation": "",
+                  "image": "/images/testimonial-man.svg",
+                  "description": "Awesome service from HappyLocate when I moved to my new home in Bangalore! The entire process was smooth and well-coordinated—from packing to delivery. The team was super professional, punctual, and handled my belongings with great care. It really took the stress out of moving. I'm so glad I chose HappyLocate and would definitely recommend them to anyone planning a move!"
+               },
+               {
+                  "id": 3,
+                  "name": "Dinesh Kumar",
+                  "designation": "",
+                  "image": "/images/testimonial-man.svg",
+                  "description": "Awesome service from HappyLocate when I moved to my new home in Bangalore! The entire process was smooth and well-coordinated—from packing to delivery. The team was super professional, punctual, and handled my belongings with great care. It really took the stress out of moving. I'm so glad I chose HappyLocate and would definitely recommend them to anyone planning a move!"
+               },
+               {
+                  "id": 4,
+                  "name": "Kartikey Ranjan",
+                  "designation": "",
+                  "image": "/images/testimonial-man.svg",
+                  "description": "Very good service, I got my goods shifted from Delhi to Bengaluru. There were 80 items and all items were delivered and installed without any damage. It seemed like I shifted from one society to another in same city. Thank you Happylocate for an awesome service."
+               }
+            ]}
+         />
          <BlogSection />
          <RelocationSection
             descriptionParagraphs={[

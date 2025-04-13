@@ -2,7 +2,6 @@ import FAQ from '@/components/common/FAQ'
 import BlogSection from '@/components/home/BlogSection'
 import RelocationSection from '@/components/home/RelocationSection'
 import TestimonialCarousel from '@/components/home/Testimonial'
-import TrustedSection from '@/components/home/TrustedSection'
 import Header from '@/components/pet-taxi/Header'
 import PetTable from '@/components/pet-taxi/PetTable'
 import PetTaxiForm from '@/components/pet-taxi/PetTaxiForm'
@@ -68,7 +67,31 @@ const Page = () => {
           },
         ]}
       />
-      <TestimonialCarousel />
+      <TestimonialCarousel
+        testimonials={[
+          {
+            "id": 1,
+            "name": "Rohini Pandey",
+            "designation": "",
+            "image": "/images/testimonial-woman.svg",
+            "description": "Relocating my pet Chase from India to London felt like a huge task—until I found HappyLocate. From day one, the team was incredibly supportive, attentive, and genuinely caring. They handled every detail with such precision and love, it truly felt like Chase was in the safest hands possible."
+          },
+          {
+            "id": 2,
+            "name": "Vidhi Agarwal",
+            "designation": "",
+            "image": "/images/testimonial-woman.svg",
+            "description": "Relocating Olli from India to Berlin was one of the biggest steps in our journey—and I’m so glad I had HappyLocate by my side. From paperwork to pet care, their team handled everything with warmth and professionalism. Olli arrived safe, happy, and calm—and that peace of mind is priceless. Thank you, HappyLocate, for treating my baby like your own!"
+          },
+          {
+            "id": 3,
+            "name": "Nikita",
+            "designation": "",
+            "image": "/images/testimonial-woman.svg",
+            "description": "Relocating Zara from Abu Dhabi to India was a big step, and I was really anxious about it. But HappyLocate made the whole process so smooth and comforting. The team was kind, always kept me updated, and treated Zara with so much care. When she arrived safe and happy, I knew I had made the right choice. Thank you, HappyLocate, for handling everything so beautifully."
+          }
+        ]}
+      />
       <BlogSection />
 
       <RelocationSection

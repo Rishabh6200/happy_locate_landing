@@ -80,7 +80,9 @@ const Page: FC<PageProps> = async ({ params }) => {
          <FAQ
             faqs={service.faq || []}
          />
-         <TestimonialCarousel />
+         <TestimonialCarousel
+            testimonials={service.testimonial || []}
+         />
          <BlogSection />
 
          {service.type === 'Domestic' ? <RelocationSection

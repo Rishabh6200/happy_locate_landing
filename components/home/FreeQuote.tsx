@@ -4,6 +4,7 @@ import { Button, Typography, useTheme } from '@mui/material'
 import Image from 'next/image'
 import CheckCircleIcon from '@mui/icons-material/CheckCircle'
 import ArrowOutwardIcon from '@mui/icons-material/ArrowOutward'
+import Link from 'next/link'
 
 const FreeQuote = () => {
 
@@ -55,6 +56,8 @@ const FreeQuote = () => {
                   size="large"
                   className="!bg-blue-600 hover:!bg-blue-700 rounded-full px-6 gap-2 mt-4 normal-case"
                   endIcon={<ArrowOutwardIcon className='bg-white h-8 w-8 p-1 rounded-full' color={'primary'} />}
+                  LinkComponent={Link}
+                  href='https://dashboard.happylocate.com/swift-app/relocations/pet-basic-details'
                >
                   Get a Free Quote
                </Button>

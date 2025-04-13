@@ -4,10 +4,6 @@
   width: 100% !important;
 }
 
-.mui-q7mezt {
-  margin-top: 18px !important;
-}
-
 @layer utilities {
   .no-scrollbar::-webkit-scrollbar {
     display: none;

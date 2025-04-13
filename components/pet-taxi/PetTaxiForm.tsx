@@ -181,6 +181,9 @@ const PetTaxiForm = () => {
                            },
                            slotProps: { input: { className: 'pl-3' } },
                         },
+                        openPickerButton: {
+                           className: "mt-4"
+                        }
                      }}
                   />
                </Box>

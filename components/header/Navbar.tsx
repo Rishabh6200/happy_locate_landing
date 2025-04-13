@@ -9,6 +9,7 @@ import {
   IconButton,
   Container,
   useTheme,
+  Divider,
 } from '@mui/material';
 import MenuIcon from '@mui/icons-material/Menu';
 import Image from 'next/image';
@@ -43,7 +44,7 @@ const Navbar = () => {
           label: 'Packing & Moving',
           href: '/services/packer-mover',
           subMenu: services.map((service) => ({
-            type: "packer-mover",
+            type: "Packer-mover",
             subType: "Cites",
             label: service.title,
             href: `/services/packer-mover/${service.slug}`,
@@ -94,7 +95,7 @@ const Navbar = () => {
       position="sticky"
       elevation={1}
       className={`${pathname === '/' ? 'bg-white' : 'bg-primary'
-        } transition-all duration-300 z-[1100] h-20`}
+        } z-[1100] h-20`}
     >
       <Container maxWidth="lg" className="h-full flex items-center">
         <Toolbar className="flex justify-between items-center h-full w-full px-0">
@@ -142,7 +143,7 @@ const Navbar = () => {
                       >
                         <div
                           className={`bg-white border border-gray-300 shadow-lg rounded-md py-2 flex transition-all duration-200 ${hoveredIndex !== null && link.children[hoveredIndex]?.subMenu
-                            ? 'min-w-[36rem] w-auto'
+                            ? 'min-w-[44rem] w-auto'
                             : 'min-w-40'
                             }`}
                         >
@@ -182,7 +183,7 @@ const Navbar = () => {
 
                                     return (
                                       <div className="flex flex-col gap-3">
-                                        {Object.entries(grouped).map(([type, items]) => (
+                                        {Object.entries(grouped).map(([type, items], index, arr) => (
                                           <div key={type}>
                                             <Link
                                               href={type === 'Domestic' ? '/services/pet-relocation/India' : '/services/pet-relocation'}
@@ -190,7 +191,8 @@ const Navbar = () => {
                                             >
                                               {type}
                                             </Link>
-                                            <ul className="flex flex-col gap-1">
+                                            {type === 'Packer-mover' && <p className='my-1 mt-3 mx-2'>Cities</p>}
+                                            <ul className="grid grid-cols-2 gap-x-3 gap-y-1 mt-2">
                                               {items.map((sub, i) => (
                                                 <li
                                                   key={i}
@@ -203,6 +205,9 @@ const Navbar = () => {
                                                 </li>
                                               ))}
                                             </ul>
+                                            {arr.length > 1 && index < arr.length - 1 && (
+                                              <Divider className="mt-2 bg-black -mb-2" />
+                                            )}
                                           </div>
                                         ))}
                                       </div>
@@ -238,7 +243,7 @@ const Navbar = () => {
               className={`${pathname === '/'
                 ? `text-white bg-[${palette.primary.main}] hover:opacity-80`
                 : 'bg-white text-primary hover:bg-gray-100'
-                } font-bold capitalize py-2 px-8 rounded-full`}
+                } capitalize py-2 px-8 rounded-full`}
               endIcon={<KeyboardArrowDown className="h-7 w-7" />}
             >
               Sign In
@@ -278,6 +283,7 @@ const Navbar = () => {
         mobileOpen={mobileOpen}
         setMobileOpen={setMobileOpen}
         navLinks={navLinks}
+        signupLinks={signupLinks}
       />
     </AppBar>
   );

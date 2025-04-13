@@ -18,6 +18,7 @@ const services = [
   { key: 'petRelocation', label: 'Pet Relocation', icon: PetsIcon },
   { key: 'petTaxi', label: 'Pet Taxi', icon: AirportShuttleIcon },
   { key: 'vehicleShifting', label: 'Vehicle Shifting', icon: DirectionsCarIcon },
+  { key: 'storage', label: 'Storage', icon: AirportShuttleIcon },
   { key: 'supportServices', label: 'Support Services', icon: SupportIcon },
 ];
 
