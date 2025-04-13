@@ -3,16 +3,946 @@
       "slug": "usa",
       "breadcrumb": "Pet Relocatoin",
       "title": "Pet Relocation Services In USA",
+      "type": "International",
       "intro": {
          "tagline": "About Service",
          "headline": "Planning to relocate your pet to or from the USA?",
          "description": "Whether you’re flying into cities like New York, Los Angeles, or Houston, or heading out from the States, HappyLocate ensures a stress-free, USDA-compliant journey for your furry companion. With complex documentation and airline regulations, it’s crucial to get it right. That’s where we come in.",
          "content": "",
          "cta": {
-           "text": "Get a Free Quote",
-           "link": "#"
+            "text": "Get a Free Quote",
+            "link": "https://dashboard.happylocate.com/swift-app/relocations/pet-basic-details"
          },
-         "image": "/path-to-image"
-       }
+         "image": "/images/service-hero-banner.svg"
+      },
+      "documentsRequired": {
+         "heading": "Documents Required",
+         "ctaTitle": "Book Now",
+         "list": [
+            {
+               "title": "NOC from AQCS (India)",
+               "icon": "/images/service-box.svg",
+               "desc": ""
+            },
+            {
+               "title": "ISO-compliant Microchip",
+               "icon": "/images/service-box.svg",
+               "desc": ""
+            },
+            {
+               "title": "Valid Rabies Vaccination Certificate",
+               "icon": "/images/service-box.svg",
+               "desc": ""
+            },
+            {
+               "title": "Fit-to-Fly Health Certificate",
+               "icon": "/images/service-box.svg",
+               "desc": ""
+            },
+            {
+               "title": "APHIS Form 7001 (for USA entry)",
+               "icon": "/images/service-box.svg",
+               "desc": ""
+            },
+            {
+               "title": "CDC Dog Import Permit (if applicable)",
+               "icon": "/images/service-box.svg",
+               "desc": ""
+            },
+            {
+               "title": "Airline-approved IATA Crate",
+               "icon": "/images/service-box.svg",
+               "desc": ""
+            }
+         ]
+      },
+      "faq": [
+         {
+            "question": "Do I need a rabies certificate to bring my dog into the USA?",
+            "answer": "Yes, it's mandatory for most dogs unless they’re under 12 weeks old and coming from rabies-free countries."
+         },
+         {
+            "question": "Can I bring my cat to the USA without a rabies Titer Test?",
+            "answer": "Yes, cats are not required to have rabies vaccinations for U.S. entry, but some states may have different rules."
+         },
+         {
+            "question": "How early should I start the pet relocation process to the U.S.?",
+            "answer": "Ideally, start 55-60 days in advance to allow for documentation and airline coordination."
+         },
+         {
+            "question": "Are there quarantine rules when entering the USA?",
+            "answer": "The U.S. doesn’t require general quarantine for pets, but state-wise rules and airline policies may apply."
+         },
+         {
+            "question": "Can I relocate my pet to the USA if it’s a snub-nosed breed?",
+            "answer": "Yes, but extra precautions are necessary. Certain airlines have restrictions, especially during summer months."
+         }
+      ]
+   },
+   {
+      "slug": "uk",
+      "breadcrumb": "Pet Relocatoin",
+      "title": "Pet Relocation Services In UK",
+      "type": "International",
+      "intro": {
+         "tagline": "About Service",
+         "headline": "Traveling with your pet to or from the UK?",
+         "description": "Whether you're flying to London, Manchester, or Edinburgh, HappyLocate ensures compliance with the UK's strict pet import laws and DEFRA regulations. We offer expert handling to guarantee a smooth experience.",
+         "content": "",
+         "cta": {
+            "text": "Get a Free Quote",
+            "link": "https://dashboard.happylocate.com/swift-app/relocations/pet-basic-details"
+         },
+         "image": "/images/service-hero-banner.svg"
+      },
+      "documentsRequired": {
+         "heading": "Documents Required",
+         "ctaTitle": "Book Now",
+         "list": [
+            {
+               "title": "NOC from AQCS (India)",
+               "icon": "/images/service-box.svg",
+               "desc": ""
+            },
+            {
+               "title": "ISO-compliant Microchip",
+               "icon": "/images/service-box.svg",
+               "desc": ""
+            },
+            {
+               "title": "Rabies vaccination certificate",
+               "icon": "/images/service-box.svg",
+               "desc": ""
+            },
+            {
+               "title": "Rabies titer test (RNATT) – 3 months in advance",
+               "icon": "/images/service-box.svg",
+               "desc": ""
+            },
+            {
+               "title": "Tapeworm treatment (for dogs only)",
+               "icon": "/images/service-box.svg",
+               "desc": ""
+            },
+            {
+               "title": "GB Health Certificate",
+               "icon": "/images/service-box.svg",
+               "desc": ""
+            },
+            {
+               "title": "Airline-approved crate",
+               "icon": "/images/service-box.svg",
+               "desc": ""
+            }
+         ]
+      },
+      "faq": [
+         {
+            "question": "Is the rabies titer test mandatory for the UK?",
+            "answer": "Yes, and it must be done at least 3 months before travel."
+         },
+         {
+            "question": "Can pets fly in-cabin to the UK?",
+            "answer": "No, UK law requires all pets to arrive via cargo."
+         },
+         {
+            "question": "Is quarantine required in the UK?",
+            "answer": "Not if documents are complete and timelines are followed correctly."
+         },
+         {
+            "question": "Are there any banned breeds in the UK?",
+            "answer": "Yes, breeds like Pit Bull Terrier and Dogo Argentino are restricted."
+         },
+         {
+            "question": "Do I need to inform UK customs in advance?",
+            "answer": "Yes, advance notice must be given through the UK Pet Travel Scheme."
+         }
+      ]
+   },
+   {
+      "slug": "uae",
+      "breadcrumb": "Pet Relocatoin",
+      "title": "Pet Relocation Services In UAE",
+      "type": "International",
+      "intro": {
+         "tagline": "About Service",
+         "headline": "Traveling with your pet to or from the UAE?",
+         "description": "Whether you're relocating your pet to Dubai, Abu Dhabi, or returning to India from the UAE, HappyLocate ensures a safe and well-coordinated relocation process. We assist with India’s NOC, UAE import permits, and all required health checks.",
+         "content": "",
+         "cta": {
+            "text": "Get a Free Quote",
+            "link": "https://dashboard.happylocate.com/swift-app/relocations/pet-basic-details"
+         },
+         "image": "/images/service-hero-banner.svg"
+      },
+      "documentsRequired": {
+         "heading": "Documents Required",
+         "ctaTitle": "Book Now",
+         "list": [
+            {
+               "title": "NOC from AQCS (India)",
+               "icon": "/images/service-box.svg",
+               "desc": ""
+            },
+            {
+               "title": "ISO-compliant Microchip",
+               "icon": "/images/service-box.svg",
+               "desc": ""
+            },
+            {
+               "title": "Rabies vaccination certificate",
+               "icon": "/images/service-box.svg",
+               "desc": ""
+            },
+            {
+               "title": "Health certificate from registered vet (within 7 days of travel)",
+               "icon": "/images/service-box.svg",
+               "desc": ""
+            },
+            {
+               "title": "TUAE Ministry of Climate Change & Environment Import Permit",
+               "icon": "/images/service-box.svg",
+               "desc": ""
+            },
+            {
+               "title": "Fit-to-fly certificate",
+               "icon": "/images/service-box.svg",
+               "desc": ""
+            },
+            {
+               "title": "Airline-compliant crate",
+               "icon": "/images/service-box.svg",
+               "desc": ""
+            }
+         ]
+      },
+      "faq": [
+         {
+            "question": "Is an import permit required for UAE?",
+            "answer": "Yes, you must apply and get approval before travel."
+         },
+         {
+            "question": "Are there quarantine rules in the UAE?",
+            "answer": "Not usually, unless there is a documentation issue or health concern."
+         },
+         {
+            "question": "How many pets can I take to the UAE?",
+            "answer": "Up to 2 pets per person are allowed under personal relocation."
+         },
+         {
+            "question": "Is the UAE pet-friendly for relocation?",
+            "answer": "Yes, the country has clear guidelines, and most airlines support pet travel."
+         },
+         {
+            "question": "Can pets fly in-cabin to the UAE?",
+            "answer": "Usually no, most pets are transported in the hold or as manifest cargo."
+         }
+      ]
+   },
+   {
+      "slug": "canada",
+      "breadcrumb": "Pet Relocatoin",
+      "title": "Pet Relocation Services In Canada",
+      "type": "International",
+      "intro": {
+         "tagline": "About Service",
+         "headline": "Traveling with your pet to or from the Canada?",
+         "description": "Canada is known for its pet-friendly policies, but you’ll still need to meet CFIA (Canadian Food Inspection Agency) requirements for a smooth transition. Whether you're relocating to Toronto, Vancouver, or Montreal, HappyLocate ensures everything is handled with care.",
+         "content": "",
+         "cta": {
+            "text": "Get a Free Quote",
+            "link": "https://dashboard.happylocate.com/swift-app/relocations/pet-basic-details"
+         },
+         "image": "/images/service-hero-banner.svg"
+      },
+      "documentsRequired": {
+         "heading": "Documents Required",
+         "ctaTitle": "Book Now",
+         "list": [
+            {
+               "title": "NOC from AQCS (India)",
+               "icon": "/images/service-box.svg",
+               "desc": ""
+            },
+            {
+               "title": "ISO-compliant Microchip",
+               "icon": "/images/service-box.svg",
+               "desc": ""
+            },
+            {
+               "title": "Rabies vaccination certificate (at least 30 days old)",
+               "icon": "/images/service-box.svg",
+               "desc": ""
+            },
+            {
+               "title": "Health certificate from government-approved vet",
+               "icon": "/images/service-box.svg",
+               "desc": ""
+            },
+            {
+               "title": "Fit-to-fly certificate",
+               "icon": "/images/service-box.svg",
+               "desc": ""
+            },
+            {
+               "title": "Import declaration to Canada Border Services Agency (CBSA)",
+               "icon": "/images/service-box.svg",
+               "desc": ""
+            },
+            {
+               "title": "Airline-compliant crate",
+               "icon": "/images/service-box.svg",
+               "desc": ""
+            }
+         ]
+      },
+      "faq": [
+         {
+            "question": "Is microchipping mandatory for Canada?",
+            "answer": "It’s not mandatory, but it is highly recommended for identification and re-entry to India."
+         },
+         {
+            "question": "Is quarantine required in Canada?",
+            "answer": "No, unless documentation is incomplete or the pet shows symptoms."
+         },
+         {
+            "question": "Can my pet fly in-cabin to Canada?",
+            "answer": "Yes, small pets can travel in-cabin depending on the airline policy."
+         },
+         {
+            "question": "Are rabies vaccines compulsory for Canada?",
+            "answer": "Yes, and the certificate must be issued at least 30 days before travel."
+         },
+         {
+            "question": "Is Canada strict about pet food and bedding?",
+            "answer": "Yes, only limited quantities of pet food are allowed; check customs regulations."
+         }
+      ]
+   },
+   {
+      "slug": "KSA",
+      "breadcrumb": "Pet Relocatoin",
+      "title": "Pet Relocation Services In KSA",
+      "type": "International",
+      "intro": {
+         "tagline": "About Service",
+         "headline": "Traveling with your pet to or from the KSA?",
+         "description": "Relocating to or from Saudi Arabia with your pet? KSA has specific regulations that include import permits and strict vaccination timelines. HappyLocate ensures a hassle-free experience, guiding you through every step from India’s NOC to customs clearance in Saudi.",
+         "content": "",
+         "cta": {
+            "text": "Get a Free Quote",
+            "link": "https://dashboard.happylocate.com/swift-app/relocations/pet-basic-details"
+         },
+         "image": "/images/service-hero-banner.svg"
+      },
+      "documentsRequired": {
+         "heading": "Documents Required",
+         "ctaTitle": "Book Now",
+         "list": [
+            {
+               "title": "NOC from AQCS (India)",
+               "icon": "/images/service-box.svg",
+               "desc": ""
+            },
+            {
+               "title": "ISO-compliant Microchip",
+               "icon": "/images/service-box.svg",
+               "desc": ""
+            },
+            {
+               "title": "Rabies vaccination certificate (issued 30+ days before travel)",
+               "icon": "/images/service-box.svg",
+               "desc": ""
+            },
+            {
+               "title": "General vaccination record",
+               "icon": "/images/service-box.svg",
+               "desc": ""
+            },
+            {
+               "title": "Health certificate from government-approved vet",
+               "icon": "/images/service-box.svg",
+               "desc": ""
+            },
+            {
+               "title": "Saudi Ministry of Agriculture Import Permit",
+               "icon": "/images/service-box.svg",
+               "desc": ""
+            },
+            {
+               "title": "Fit-to-fly certificate",
+               "icon": "/images/service-box.svg",
+               "desc": ""
+            },
+            {
+               "title": "Export documentation",
+               "icon": "/images/service-box.svg",
+               "desc": ""
+            }
+         ]
+      },
+      "faq": [
+         {
+            "question": "Is an import permit mandatory for KSA?",
+            "answer": "Yes, you must obtain one from the Ministry of Agriculture prior to travel."
+         },
+         {
+            "question": "Do pets need a quarantine in KSA?",
+            "answer": "Not usually, unless documentation is incomplete or inaccurate."
+         },
+         {
+            "question": "Are there restrictions on breeds in Saudi Arabia?",
+            "answer": "Yes, breeds like Pit Bulls and Rottweilers may face entry denial."
+         },
+         {
+            "question": "Can pets travel in-cabin to KSA?",
+            "answer": "It depends on the airline, but most require pets to travel as checked baggage or cargo."
+         },
+         {
+            "question": "Are both dogs and cats allowed into KSA?",
+            "answer": "Yes, with proper paperwork, both dogs and cats can enter the country."
+         }
+      ]
+   },
+   {
+      "slug": "Malaysia",
+      "breadcrumb": "Pet Relocation",
+      "title": "Pet Relocation Services In Malaysia",
+      "type": "International",
+      "intro": {
+         "tagline": "About Service",
+         "headline": "Traveling with your pet to or from Malaysia?",
+         "description": "Relocating to or from Malaysia with your pet? Malaysia has specific regulations including import permits, vaccination requirements, and quarantine periods. HappyLocate ensures a smooth process, guiding you through every step from export documents in India to quarantine and customs clearance in Malaysia.",
+         "content": "",
+         "cta": {
+            "text": "Get a Free Quote",
+            "link": "https://dashboard.happylocate.com/swift-app/relocations/pet-basic-details"
+         },
+         "image": "/images/service-hero-banner.svg"
+      },
+      "documentsRequired": {
+         "heading": "Documents Required",
+         "ctaTitle": "Book Now",
+         "list": [
+            {
+               "title": "NOC from AQCS (India)",
+               "icon": "/images/service-box.svg",
+               "desc": ""
+            },
+            {
+               "title": "ISO-compliant Microchip",
+               "icon": "/images/service-box.svg",
+               "desc": ""
+            },
+            {
+               "title": "Rabies vaccination certificate (issued 30+ days before travel)",
+               "icon": "/images/service-box.svg",
+               "desc": ""
+            },
+            {
+               "title": "Malaysia Import Permit (from Department of Veterinary Services)",
+               "icon": "/images/service-box.svg",
+               "desc": ""
+            },
+            {
+               "title": "Fit-to-fly certificate from vet",
+               "icon": "/images/service-box.svg",
+               "desc": ""
+            },
+            {
+               "title": "Quarantine booking (7–10 days upon arrival in Malaysia)",
+               "icon": "/images/service-box.svg",
+               "desc": ""
+            }
+         ]
+      },
+      "faq": [
+         {
+            "question": "Is quarantine required in Malaysia?",
+            "answer": "Yes, 7 to 10 days in a government facility upon arrival."
+         },
+         {
+            "question": "Can pets travel in-cabin to Malaysia?",
+            "answer": "Most airlines require pets to be checked in or transported as cargo."
+         },
+         {
+            "question": "Do I need a titer test for Malaysia?",
+            "answer": "No, but rabies vaccination must be up to date and documented."
+         },
+         {
+            "question": "Is microchipping mandatory for Malaysia?",
+            "answer": "Yes, ISO 15-digit microchip is required for entry."
+         },
+         {
+            "question": "Can I visit my pet during quarantine?",
+            "answer": "Yes, some facilities allow visiting hours, depending on location."
+         }
+      ]
+   },
+   {
+      "slug": "Australia",
+      "breadcrumb": "Pet Relocation",
+      "title": "Pet Relocation Services In Australia",
+      "type": "International",
+      "intro": {
+         "tagline": "About Service",
+         "headline": "Traveling with your pet to or from Australia?",
+         "description": "Australia has one of the strictest pet import policies in the world. But don’t worry — HappyLocate navigates every step, including permits, blood tests, and quarantine coordination. We ensure your pet enters or exits Australia with zero surprises and maximum care.",
+         "content": "",
+         "cta": {
+            "text": "Get a Free Quote",
+            "link": "https://dashboard.happylocate.com/swift-app/relocations/pet-basic-details"
+         },
+         "image": "/images/service-hero-banner.svg"
+      },
+      "documentsRequired": {
+         "heading": "Documents Required",
+         "ctaTitle": "Book Now",
+         "list": [
+            {
+               "title": "NOC from AQCS (India)",
+               "icon": "/images/service-box.svg",
+               "desc": ""
+            },
+            {
+               "title": "ISO-compliant Microchip",
+               "icon": "/images/service-box.svg",
+               "desc": ""
+            },
+            {
+               "title": "Rabies vaccination certificate",
+               "icon": "/images/service-box.svg",
+               "desc": ""
+            },
+            {
+               "title": "Rabies titer test (RNATT) – at least 180 days before travel",
+               "icon": "/images/service-box.svg",
+               "desc": ""
+            },
+            {
+               "title": "Australia Import Permit (from DAFF)",
+               "icon": "/images/service-box.svg",
+               "desc": ""
+            },
+            {
+               "title": "Pre-export clinical exam report",
+               "icon": "/images/service-box.svg",
+               "desc": ""
+            },
+            {
+               "title": "Quarantine reservation (Mickleham facility – 10 days)",
+               "icon": "/images/service-box.svg",
+               "desc": ""
+            }
+         ]
+      },
+      "faq": [
+         {
+            "question": "Is quarantine mandatory in Australia?",
+            "answer": "Yes, 10 days of quarantine at the government-approved facility is required."
+         },
+         {
+            "question": "How long does it take to prepare for relocation to Australia?",
+            "answer": "At least 6–7 months due to strict testing and documentation timelines."
+         },
+         {
+            "question": "Can pets fly directly from India to Australia?",
+            "answer": "No, pets must transit via approved countries like Singapore or Malaysia."
+         },
+         {
+            "question": "Are all breeds allowed in Australia?",
+            "answer": "No, some breeds like Pit Bulls and Japanese Tosas are banned."
+         },
+         {
+            "question": "Is the titer test time-sensitive?",
+            "answer": "Yes, it must be done 180+ days before travel but within 12 months."
+         }
+      ]
+   },
+   {
+      "slug": "Germany",
+      "breadcrumb": "Pet Relocation",
+      "title": "Pet Relocation Services In Germany",
+      "type": "International",
+      "intro": {
+         "tagline": "About Service",
+         "headline": "Traveling with your pet to or from Germany?",
+         "description": "Germany welcomes pets as part of the family, but relocating them requires precision in paperwork and regulations. HappyLocate ensures smooth transitions to and from Berlin, Munich, Frankfurt, and beyond—with full adherence to EU pet travel rules.",
+         "content": "",
+         "cta": {
+            "text": "Get a Free Quote",
+            "link": "https://dashboard.happylocate.com/swift-app/relocations/pet-basic-details"
+         },
+         "image": "/images/service-hero-banner.svg"
+      },
+      "documentsRequired": {
+         "heading": "Documents Required",
+         "ctaTitle": "Book Now",
+         "list": [
+            {
+               "title": "NOC from AQCS (India)",
+               "icon": "/images/service-box.svg",
+               "desc": ""
+            },
+            {
+               "title": "ISO microchip (registered before rabies vaccine)",
+               "icon": "/images/service-box.svg",
+               "desc": ""
+            },
+            {
+               "title": "Valid rabies certificate",
+               "icon": "/images/service-box.svg",
+               "desc": ""
+            },
+            {
+               "title": "Rabies titer test (if entering from India)",
+               "icon": "/images/service-box.svg",
+               "desc": ""
+            },
+            {
+               "title": "EU-compliant health certificate",
+               "icon": "/images/service-box.svg",
+               "desc": ""
+            },
+            {
+               "title": "Fit-to-fly certificate",
+               "icon": "/images/service-box.svg",
+               "desc": ""
+            },
+            {
+               "title": "Customs declaration for entry into Germany",
+               "icon": "/images/service-box.svg",
+               "desc": ""
+            }
+         ]
+      },
+      "faq": [
+         {
+            "question": "Do pets need a titer test for Germany?",
+            "answer": "Yes, it must be done at least 30 days after vaccination and 3 months before entry."
+         },
+         {
+            "question": "Is pet quarantine mandatory in Germany?",
+            "answer": "No, not if documents and timelines are compliant."
+         },
+         {
+            "question": "Can pets fly in-cabin to Germany?",
+            "answer": "Yes, small pets are allowed in-cabin on most international airlines."
+         },
+         {
+            "question": "Are there restricted breeds in Germany?",
+            "answer": "Yes, including American Staffordshire Terrier and Bull Terrier."
+         },
+         {
+            "question": "Is Germany pet-friendly for relocation?",
+            "answer": "Very! With correct paperwork, the process is efficient and pet-friendly."
+         }
+      ]
+   },
+   {
+      "slug": "New-Zealand",
+      "breadcrumb": "Pet Relocation",
+      "title": "Pet Relocation Services In New Zealand",
+      "type": "International",
+      "intro": {
+         "tagline": "About Service",
+         "headline": "Traveling with your pet to or from New Zealand?",
+         "description": "New Zealand has one of the most detailed pet import protocols. HappyLocate coordinates complex timelines, vet approvals, and quarantine bookings so your pet’s journey to or from India is seamless, compliant, and safe.",
+         "content": "",
+         "cta": {
+            "text": "Get a Free Quote",
+            "link": "https://dashboard.happylocate.com/swift-app/relocations/pet-basic-details"
+         },
+         "image": "/images/service-hero-banner.svg"
+      },
+      "documentsRequired": {
+         "heading": "Documents Required",
+         "ctaTitle": "Book Now",
+         "list": [
+            {
+               "title": "NOC from AQCS (India)",
+               "icon": "/images/service-box.svg",
+               "desc": ""
+            },
+            {
+               "title": "ISO-compliant microchip",
+               "icon": "/images/service-box.svg",
+               "desc": ""
+            },
+            {
+               "title": "Rabies vaccination certificate",
+               "icon": "/images/service-box.svg",
+               "desc": ""
+            },
+            {
+               "title": "Rabies titer test (at least 180 days before travel)",
+               "icon": "/images/service-box.svg",
+               "desc": ""
+            },
+            {
+               "title": "Import Permit from MPI (New Zealand)",
+               "icon": "/images/service-box.svg",
+               "desc": ""
+            },
+            {
+               "title": "Parasite treatment reports",
+               "icon": "/images/service-box.svg",
+               "desc": ""
+            },
+            {
+               "title": "Quarantine reservation (10 days)",
+               "icon": "/images/service-box.svg",
+               "desc": ""
+            },
+            {
+               "title": "Final health certificate before departure",
+               "icon": "/images/service-box.svg",
+               "desc": ""
+            }
+         ]
+      },
+      "faq": [
+         {
+            "question": "Is quarantine mandatory in New Zealand?",
+            "answer": "Yes, 10 days in an approved facility is compulsory for all pets."
+         },
+         {
+            "question": "How long is the preparation time for NZ?",
+            "answer": "It takes about 7 months to meet all documentation and medical requirements."
+         },
+         {
+            "question": "Can pets fly directly from India to New Zealand?",
+            "answer": "No, pets must travel via approved intermediate countries."
+         },
+         {
+            "question": "Are there breed restrictions in New Zealand?",
+            "answer": "Yes, some aggressive breeds are not allowed entry."
+         },
+         {
+            "question": "Is pet relocation to NZ costly?",
+            "answer": "Yes, due to testing, permits, and quarantine, it's one of the costlier countries."
+         }
+      ]
+   },
+   {
+      "slug": "Turkey",
+      "breadcrumb": "Pet Relocation",
+      "title": "Pet Relocation Services In Turkey",
+      "type": "International",
+      "intro": {
+         "tagline": "About Service",
+         "headline": "Traveling with your pet to or from Turkey?",
+         "description": "Moving your pet to or from Turkey? Whether it's Istanbul or Ankara, Turkey allows pets to travel from India with the right health certifications and pre-approvals. HappyLocate takes care of NOC, airline crate compliance, and Turkish entry documents so your pet travels smoothly without delays or detentions.",
+         "content": "",
+         "cta": {
+            "text": "Get a Free Quote",
+            "link": "https://dashboard.happylocate.com/swift-app/relocations/pet-basic-details"
+         },
+         "image": "/images/service-hero-banner.svg"
+      },
+      "documentsRequired": {
+         "heading": "Documents Required",
+         "ctaTitle": "Book Now",
+         "list": [
+            {
+               "title": "NOC from AQCS (India)",
+               "icon": "/images/service-box.svg",
+               "desc": ""
+            },
+            {
+               "title": "ISO 11784/11785-compliant microchip",
+               "icon": "/images/service-box.svg",
+               "desc": ""
+            },
+            {
+               "title": "Rabies vaccination certificate (at least 30 days prior)",
+               "icon": "/images/service-box.svg",
+               "desc": ""
+            },
+            {
+               "title": "Fit-to-fly certificate from vet",
+               "icon": "/images/service-box.svg",
+               "desc": ""
+            },
+            {
+               "title": "Turkish veterinary certificate (endorsed)",
+               "icon": "/images/service-box.svg",
+               "desc": ""
+            },
+            {
+               "title": "Customs clearance documents",
+               "icon": "/images/service-box.svg",
+               "desc": ""
+            }
+         ]
+      },
+      "faq": [
+         {
+            "question": "Is quarantine required in Turkey?",
+            "answer": "Only if documents are incomplete or the pet appears ill at arrival."
+         },
+         {
+            "question": "Is a titer test needed for Turkey?",
+            "answer": "Usually not required, but some airlines may ask for it."
+         },
+         {
+            "question": "How many pets can I bring to Turkey?",
+            "answer": "A maximum of 2 pets per person is allowed without commercial intent."
+         },
+         {
+            "question": "Can pets fly in-cabin to Turkey?",
+            "answer": "Yes, most airlines allow in-cabin travel for small pets."
+         },
+         {
+            "question": "Are there any banned breeds in Turkey?",
+            "answer": "Yes, Pit Bulls, Tosas, and certain large guard breeds are restricted."
+         }
+      ]
+   },
+   {
+      "slug": "India",
+      "breadcrumb": "Pet Relocation",
+      "title": "Pet Transport Services in India",
+      "type": "Domestic",
+      "intro": {
+         "tagline": "About Service",
+         "headline": "Moving with pets?",
+         "description": "We know they’re more than just animals - they’re family! When you’re Relocating within India, your furry friend deserves a safe, comfortable, and stress-free journey.",
+         "content": "Introducing HappyLocate, Trusted by 1.5Lakhs Customer, ensuring your pet’s safety, well-being, and happiness at every step. Our expert team of Pet lovers & Relocation specialists takes care of everything - Paperwork, Travel arrangements, and Comfort - So you don’t have to worry. Your pet deserves the best. Let’s make their journey smooth!",
+         "cta": {
+            "text": "Get a Free Quote",
+            "link": "https://dashboard.happylocate.com/swift-app/relocations/pet-basic-details"
+         },
+         "image": "/images/service-hero-banner.svg"
+      },
+      "documentsRequired": {
+         "heading": "Top Pet Relocation Services Offered By Us",
+         "ctaTitle": "Book Now",
+         "list": [
+            {
+               "title": "Domestic Pet Relocation",
+               "icon": "/images/service-box.svg",
+               "desc": "Seamless city-to-city pet Transportation with Expert handlers, ensuring safety, comfort, and Journey tracking"
+            },
+            {
+               "title": "International Pet Relocation",
+               "icon": "/images/service-box.svg",
+               "desc": "Hassle-free Global pet travel with customized Travel plans, Vet assistance, and airline coordination, following all regulations."
+            },
+            {
+               "title": "Doorstep Pick & Drop",
+               "icon": "/images/service-box.svg",
+               "desc": "From your home to the final destination, we ensure a smooth, secure, and comfortable transition for your pet."
+            }
+         ]
+      },
+      "pricingTable": {
+         "heading": "Pet Transport Service In\nIndia by HappyLocate",
+         "description": "HappyLocate provides a Seamless, Stress-free, and Safe Relocation experience for Pets and their families. We believe that every Pet deserves the highest level of care, comfort, and attention throughout their journey. With a dedicated team of Pet lovers & Relocation specialists, we handle every detail - Documentation to Travel arrangements. At HappyLocate, we don't just move pets; we move hearts, creating journeys filled with trust, love, and care.",
+         "image": "/images/pet-transport-banner.jpg",
+         "imageAlt": "A happy dog in a travel crate",
+         "data": [
+            {
+               "fromCity": "Delhi",
+               "toDelhi": "TBD",
+               "toBangalore": "₹34500",
+               "toMumbai": "₹27500",
+               "toHyderabad": "₹30000",
+               "toChennai": "₹34500",
+               "toPune": "₹27500",
+               "toKolkata": "₹27500"
+            },
+            {
+               "fromCity": "Mumbai",
+               "toDelhi": "TBD",
+               "toBangalore": "₹34500",
+               "toMumbai": "TBD",
+               "toHyderabad": "₹30000",
+               "toChennai": "₹34500",
+               "toPune": "₹27500",
+               "toKolkata": "₹27500"
+            },
+            {
+               "fromCity": "Chennai",
+               "toDelhi": "TBD",
+               "toBangalore": "₹34500",
+               "toMumbai": "₹27500",
+               "toHyderabad": "₹30000",
+               "toChennai": "TBD",
+               "toPune": "₹27500",
+               "toKolkata": "₹27500"
+            },
+            {
+               "fromCity": "Kolkata",
+               "toDelhi": "TBD",
+               "toBangalore": "₹34500",
+               "toMumbai": "₹27500",
+               "toHyderabad": "₹30000",
+               "toChennai": "₹34500",
+               "toPune": "₹27500",
+               "toKolkata": "TBD"
+            },
+            {
+               "fromCity": "Pune",
+               "toDelhi": "TBD",
+               "toBangalore": "₹34500",
+               "toMumbai": "₹27500",
+               "toHyderabad": "₹30000",
+               "toChennai": "₹34500",
+               "toPune": "TBD",
+               "toKolkata": "₹27500"
+            },
+            {
+               "fromCity": "Bangalore",
+               "toDelhi": "TBD",
+               "toBangalore": "TBD",
+               "toMumbai": "₹27500",
+               "toHyderabad": "₹30000",
+               "toChennai": "₹34500",
+               "toPune": "₹27500",
+               "toKolkata": "₹27500"
+            },
+            {
+               "fromCity": "Hyderabad",
+               "toDelhi": "TBD",
+               "toBangalore": "₹34500",
+               "toMumbai": "₹27500",
+               "toHyderabad": "TBD",
+               "toChennai": "₹34500",
+               "toPune": "₹27500",
+               "toKolkata": "₹27500"
+            }
+         ]
+      },
+      "faq": [
+         {
+            "question": "How do you ensure my pet’s safety and comfort during the journey?",
+            "answer": "Your pet’s well-being is our top priority. We use IATA-approved carriers, partner with trained pet handlers, and ensure proper ventilation, hydration, and breaks throughout the journey. You’ll also get journey updates during transit."
+         },
+         {
+            "question": "Can I travel along with my pet during relocation?",
+            "answer": "Yes, in certain cases (especially by flight cabin or road transport), we can arrange for pet-parent travel along with your pet. Our team will guide you on the options based on the airline and travel route."
+         },
+         {
+            "question": "What kind of travel crates do you provide, and are they safe?",
+            "answer": "We use IATA-approved, airline-compliant crates that ensure proper ventilation, comfort, and safety. The crate size is selected based on your pet’s breed and measurements (length, height, width). If you already own a suitable crate, we can inspect and approve its use too."
+         },
+         {
+            "question": "Will my pet be quarantined during domestic relocation?",
+            "answer": "No, quarantine is not required for pets traveling within India. However, vet clearance and vaccination records are mandatory for smooth movement, especially when flying."
+         },
+         {
+            "question": "Is microchipping mandatory for domestic pet travel in India?",
+            "answer": "No, microchipping is not mandatory for domestic pet relocation within India. However, it is highly recommended for identification and safety."
+         },
+         {
+            "question": "What documents are needed for domestic pet relocation?",
+            "answer": "Vaccination certificate, Fit-to-fly certificate (issued 24–48 hours before travel), Owner ID proof, and a recent photo of your pet."
+         },
+         {
+            "question": "What vaccinations are required for domestic pet relocation?",
+            "answer": "Anti-rabies is mandatory. Core vaccines like DHPPi (for dogs) or FVRCP (for cats) are also recommended."
+         }
+      ]
    }
 ]

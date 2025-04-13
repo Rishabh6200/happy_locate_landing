@@ -22,7 +22,7 @@ const carouselData = [
       designation: 'RRF Institute',
       image: profileImg,
       description:
-         'I had a fantastic experience booking my flight through Skyticket. Their website was user-friendly, and I found a great deal within minutes. The whole process was seamless, and I appreciated their transparent pricing. I highly recommend Skyticket for hassle-free and affordable travel. loremsdjkfbsdkjfbsdjkfbsdkjfbsdjkfbsdkjbfd'
+         'I had a fantastic experience booking my flight through Skyticket. Their website was user-friendly, and I found a great deal within minutes. The whole process was seamless, and I appreciated their transparent pricing. I highly recommend Skyticket for hassle-free and affordable travel.'
    },
    {
       id: 3,
@@ -30,7 +30,7 @@ const carouselData = [
       designation: 'RRF Institute',
       image: profileImg,
       description:
-         'I had a fantastic experience booking my flight through Skyticket. Their website was user-friendly, and I found a great deal within minutes. The whole psdfnsdjfshkjhfjk sdfhskdfhsd fsdhfo sdhfoshd rocess was seamless, and I appreciated their transparent pricing. I highly recommend Skyticket for hassle-free and affordable travel.sdlfgsdfksdf'
+         'I had a fantastic experience booking my flight through Skyticket. Their website was user-friendly, and I found a great deal within minutes. The whole psdfnsdjfshkjhfjk sdfhskdfhsd fsdhfo sdhfoshd rocess was seamless, and I appreciated their transparent pricing. I highly recommend Skyticket for hassle-free and affordable travel.'
    }
 ];
 

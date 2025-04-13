@@ -43,6 +43,8 @@ const Navbar = () => {
           label: 'Packing & Moving',
           href: '/services/packer-mover',
           subMenu: services.map((service) => ({
+            type: "packer-mover",
+            subType: "Cites",
             label: service.title,
             href: `/services/packer-mover/${service.slug}`,
           })),
@@ -51,6 +53,8 @@ const Navbar = () => {
           label: 'Pet Relocation',
           href: '/services/pet-relocation',
           subMenu: petRe.map((service) => ({
+            type: service.type,
+            subType: "",
             label: service.title,
             href: `/services/pet-relocation/${service.slug}`,
           })),
@@ -137,7 +141,7 @@ const Navbar = () => {
                         }}
                       >
                         <div
-                          className={`bg-white shadow-lg rounded-md py-2 flex transition-all duration-200 ${hoveredIndex !== null && link.children[hoveredIndex]?.subMenu
+                          className={`bg-white border border-gray-300 shadow-lg rounded-md py-2 flex transition-all duration-200 ${hoveredIndex !== null && link.children[hoveredIndex]?.subMenu
                             ? 'min-w-[36rem] w-auto'
                             : 'min-w-40'
                             }`}
@@ -167,20 +171,43 @@ const Navbar = () => {
                               <>
                                 <div className="border-l border-gray-400 h-auto mx-2" />
                                 <div className="px-2">
-                                  <span className="font-bold block mb-2">Cities</span>
-                                  <ul className="flex flex-col gap-1">
-                                    {link.children[hoveredIndex].subMenu.map((sub, i) => (
-                                      <li
-                                        key={i}
-                                        onClick={() => setServicesOpen(prev => !prev)}
-                                        className="px-2 py-1  text-sm cursor-pointer"
-                                      >
-                                        <Link href={sub.href} className='hover:underline'>
-                                          {sub.label}
-                                        </Link>
-                                      </li>
-                                    ))}
-                                  </ul>
+                                  {(() => {
+                                    const subMenuItems = link.children[hoveredIndex].subMenu;
+                                    const grouped = subMenuItems.reduce((acc: Record<string, typeof subMenuItems>, item) => {
+                                      const type = item.type || 'Other';
+                                      if (!acc[type]) acc[type] = [];
+                                      acc[type].push(item);
+                                      return acc;
+                                    }, {});
+
+                                    return (
+                                      <div className="flex flex-col gap-3">
+                                        {Object.entries(grouped).map(([type, items]) => (
+                                          <div key={type}>
+                                            <Link
+                                              href={type === 'Domestic' ? '/services/pet-relocation/India' : '/services/pet-relocation'}
+                                              className="font-semibold text-base mb-1"
+                                            >
+                                              {type}
+                                            </Link>
+                                            <ul className="flex flex-col gap-1">
+                                              {items.map((sub, i) => (
+                                                <li
+                                                  key={i}
+                                                  onClick={() => setServicesOpen(prev => !prev)}
+                                                  className="px-2 py-1 text-sm cursor-pointer"
+                                                >
+                                                  <Link href={sub.href} className="hover:underline">
+                                                    {sub.label}
+                                                  </Link>
+                                                </li>
+                                              ))}
+                                            </ul>
+                                          </div>
+                                        ))}
+                                      </div>
+                                    );
+                                  })()}
                                 </div>
                               </>
                             )}
@@ -214,7 +241,7 @@ const Navbar = () => {
                 } font-bold capitalize py-2 px-8 rounded-full`}
               endIcon={<KeyboardArrowDown className="h-7 w-7" />}
             >
-              Sign Up
+              Sign In
             </Button>
             <div className="pt-2">
               {signUpOpen && (

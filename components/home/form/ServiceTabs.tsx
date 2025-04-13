@@ -18,7 +18,7 @@ const services = [
   { key: 'petRelocation', label: 'Pet Relocation', icon: PetsIcon },
   { key: 'petTaxi', label: 'Pet Taxi', icon: AirportShuttleIcon },
   { key: 'vehicleShifting', label: 'Vehicle Shifting', icon: DirectionsCarIcon },
-  // { key: 'supportServices', label: 'Support Services', icon: SupportIcon },
+  { key: 'supportServices', label: 'Support Services', icon: SupportIcon },
 ];
 
 const ServiceTabs: FC<ServiceTabsProps> = ({ value, onChange }) => {

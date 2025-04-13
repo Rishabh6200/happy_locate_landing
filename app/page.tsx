@@ -50,9 +50,6 @@ export default function Home() {
     <>
       <div>
         <HeroSection />
-        <Container maxWidth='lg' className="relative -mt-32" >
-          <ServiceForm />
-        </Container>
         <Carousel />
         <BrandLogos />
         <TrustedSection />
