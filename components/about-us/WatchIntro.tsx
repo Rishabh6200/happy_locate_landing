@@ -1,38 +1,59 @@
-import { PlayArrow } from '@mui/icons-material'
-import { Box } from '@mui/material'
-import Image from 'next/image'
-import React from 'react'
+'use client';
+import { PlayArrow } from '@mui/icons-material';
+import { Box } from '@mui/material';
+import Image from 'next/image';
+import React, { useEffect, useRef, useState } from 'react';
 
 const WatchIntro = () => {
+   const videoRef = useRef<HTMLVideoElement>(null);
+   const [isPlaying, setIsPlaying] = useState(false);
+   const [hasMounted, setHasMounted] = useState(false);
+
+   useEffect(() => {
+      setHasMounted(true);
+   }, []);
+
+   const handlePlay = () => {
+      setIsPlaying(true); // Show video
+      setTimeout(() => {
+         videoRef.current?.play(); // Wait a moment to ensure it's mounted
+      }, 100);
+   };
+   if (!hasMounted) return null;
    return (
       <div className="relative bg-[#0F0F0F] py-16 px-4 flex justify-center items-center">
          <Image
-            src='/images/subsection-dots.svg'
-            alt=''
+            src="/images/subsection-dots.svg"
+            alt=""
             fill
-            className='absolute -top-10 object-cover sm:h-2/3 h-[60vh]'
+            className="absolute -top-10 object-cover sm:h-2/3 h-[60vh]"
          />
-         <Box
-            className="relative overflow-hidden rounded-xl shadow-lg max-w-6xl w-full"
-         >
-            <Image
-               src="/images/about-video.svg" // Replace with actual path
-               alt="Watch Introduction"
-               width={1200}
-               height={600}
-               className="w-full h-auto object-cover"
-            />
 
-            {/* Play button */}
-            {/* <div className="absolute inset-0 flex flex-col justify-center items-center bg-black bg-opacity-30">
-               <div className="bg-primary rounded-full p-3 mb-2">
-                  <PlayArrow className="text-white" fontSize="large" />
+         <Box className="relative overflow-hidden rounded-xl sm:h-[70vh] shadow-lg max-w-6xl w-full aspect-video">
+            {/* Thumbnail */}
+            {!isPlaying ? (
+               <div className="relative w-full h-full cursor-pointer" onClick={handlePlay}>
+                  <Image
+                     src="/images/about-video.svg"
+                     alt="Watch Introduction"
+                     fill
+                     className="object-cover rounded-xl"
+                  />
                </div>
-               <p className="text-white text-xl font-medium">Watch Introduction</p>
-            </div> */}
+            ) : (
+               <video
+                  ref={videoRef}
+                  src="/video/video.mp4"
+                  className="w-full h-full object-cover rounded-xl"
+                  muted
+                  loop
+                  controls
+                  playsInline
+               />
+            )}
          </Box>
       </div>
-   )
-}
+   );
+};
 
-export default WatchIntro
+export default WatchIntro;

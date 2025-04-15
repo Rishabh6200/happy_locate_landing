@@ -4,28 +4,22 @@ import Image from "next/image";
 
 const founders = [
    {
-      name: "Founder Name",
-      title: "Co - Founder",
-      description:
-         "Vivek is the visionary founder and CEO of HappyLocate. With over a decade of expertise in interior design, he leads the team with a passion for creating transfer-motive spaces.",
+      name: "Ajay Tiwari",
+      title: "Co-Founder & CEO",
+      description: "With over 13 years of experience in Human Resources at companies like Nokia and Vodafone, Ajay Tiwari understands the challenges employees face during relocations. His first-hand knowledge of corporate mobility led to the birth of HappyLocate — a tech-driven relocation platform. At HappyLocate, Ajay leads strategy, corporate partnerships, and investor relations, ensuring the platform not only solves real-world problems but also scales with purpose.",
       isBlue: true,
-      image: "/images/man.svg"
+      image: "/images/ajay.jpg",
+      quote: "Relocations shouldn’t be stressful — they should be seamless, secure, and supported by technology."
    },
    {
-      name: "Founder Name",
-      title: "Ceo & Founder",
-      description:
-         "Vivek is the visionary founder and CEO of HappyLocate. With over a decade of expertise in interior design, he leads the team with a passion for creating transfer-motive spaces.",
+      name: "Sainadh Duvvuru",
+      title: "Co-Founder & Chief Business Officer (CBO)",
+      description: "An alumnus of NIT and IIM, Sainadh brings a decade of rich experience across sales, marketing, and operations, with leadership roles at HDFC Bank and BPCL. At HappyLocate, he spearheads finance, internal operations, and the development of AI-powered tools that enhance both customer experience and operational efficiency.",
       isBlue: false,
-      image: "/images/woman.svg",
+      image: "/images/Sainadh.jpg",
+      quote: "At the core of every successful relocation is a smooth, human-centric experience — that’s what we build at HappyLocate."
    }
 ];
-
-const teamMembers = Array.from({ length: 8 }).map((_, index) => ({
-   name: index % 2 === 0 ? "Shivamand Pandey" : "Monal Trump",
-   title: "Operations Manager",
-   image: index % 2 === 0 ? "/images/man.svg" : "/images/woman.svg",
-}));
 
 const OurTeam = () => {
    return (
@@ -40,66 +34,34 @@ const OurTeam = () => {
             Meet Our Inspiring Team
          </Typography>
 
-         {/* Founders */}
-         <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-6xl mx-auto mb-12">
+         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-6xl mx-auto mb-12">
             {founders.map((founder, i) => (
-               <div key={i} className="grid grid-cols-2 h-72">
-                  {/* Blue Box with Image */}
-                  <Box
-                     className="bg-blue-600  overflow-hidden shadow-sm flex rounded-bl-4xl rounded-tr-4xl"
-                  >
+               <div key={i} className="grid grid-cols-2 min-h-72 py-2">
+                  <Box className="bg-blue-600 overflow-hidden shadow-sm flex rounded-bl-4xl rounded-tr-4xl">
                      <Image
                         src={founder.image}
                         alt={founder.name}
                         height={500}
-                        width={200}
-                        className="h-full w-full"
+                        width={500}
+                        className="w-full h-full object-cover"
                      />
                   </Box>
-                  <Box
-                     className="bg-white overflow-hidden shadow-sm flex flex-col justify-center px-6 text-left rounded-tl-4xl rounded-br-4xl"
-                  >
+                  <Box className="bg-white overflow-hidden shadow-sm flex flex-col justify-center px-6 py-3 text-left rounded-tl-4xl rounded-br-4xl">
                      <Typography className="font-semibold text-base mb-1">
                         {founder.name}
                      </Typography>
                      <Typography className="text-gray-600 text-sm mb-2">
                         {founder.title}
                      </Typography>
-                     <Divider className="my-3 bg-black " />
-                     <Typography className="text-gray-500 text-xs leading-relaxed">
+                     <Divider className="my-3 bg-black" />
+                     <Typography className="text-gray-500 text-xs leading-relaxed mb-4">
                         {founder.description}
                      </Typography>
+                     <Typography className="italic text-blue-600 text-xs">
+                        “{founder.quote}”
+                     </Typography>
                   </Box>
-
                </div>
-            ))}
-
-         </div>
-
-         {/* Team Grid */}
-         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6 max-w-6xl mx-auto">
-            {teamMembers.map((member, idx) => (
-               <Box
-                  key={idx}
-                  className="rounded-xl bg-white shadow-sm overflow-hidden text-center"
-               >
-                  <div className="relative w-full h-64">
-                     <Image
-                        src={member.image}
-                        alt={member.name}
-                        fill
-                        className="object-contain"
-                     />
-                  </div>
-                  <div className="p-3 text-start">
-                     <Typography className="font-semibold text-sm">
-                        {member.name}
-                     </Typography>
-                     <Typography className="text-gray-500 text-xs">
-                        {member.title}
-                     </Typography>
-                  </div>
-               </Box>
             ))}
          </div>
       </section>
