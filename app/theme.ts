@@ -1,4 +1,3 @@
-// theme.js
 import { createTheme } from '@mui/material/styles';
 
 const theme = createTheme({
@@ -13,6 +12,9 @@ const theme = createTheme({
       primary: '#000',
       secondary: '#000',
     },
+  },
+  typography: {
+    fontFamily: 'var(--font-poppins)',
   },
   components: {
     MuiFormLabel: {

@@ -8,8 +8,15 @@
   .no-scrollbar::-webkit-scrollbar {
     display: none;
   }
+
   .no-scrollbar {
     -ms-overflow-style: none;
     scrollbar-width: none;
+  }
+}
+
+@media (min-width: 1800px) {
+  .mt-1800 {
+    margin-top: 0px;
   }
 }

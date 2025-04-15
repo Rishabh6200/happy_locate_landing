@@ -23,7 +23,6 @@ const CustomPopper = (props: any) => (
 );
 
 const PetTaxiForm = () => {
-
    const [fromInput, setFromInput] = useState('');
    const [toInput, setToInput] = useState('');
    const [fromSuggestions, setFromSuggestions] = useState<Suggestion[]>([]);
@@ -62,7 +61,7 @@ const PetTaxiForm = () => {
       });
 
       const url = `https://dashboard.happylocate.com/swift-app/relocations/pet-basic-details?${query.toString()}`;
-      window.location.href = url; // Redirect
+      window.location.href = url;
    };
 
    const renderOption = (props: any, option: Suggestion) => {
@@ -80,8 +79,8 @@ const PetTaxiForm = () => {
 
    return (
       <Container maxWidth="lg">
-         <Box className="bg-white shadow-md rounded-2xl px-4 md:px-6 py-6 flex flex-col md:flex-row items-center justify-between gap-4 mx-auto -mt-20 z-10 relative">
-            <Box className="flex flex-col md:flex-row w-full gap-4 flex-grow items-end">
+         <Box className="bg-white shadow-md rounded-2xl px-4 md:px-6 py-6 mx-auto -mt-20 z-10 relative w-full">
+            <Box className="flex flex-col md:flex-row w-full gap-4 items-stretch md:items-end space-y-4 md:space-y-0">
 
                {/* From */}
                <Box className="flex flex-col flex-1 min-w-0">
@@ -90,6 +89,7 @@ const PetTaxiForm = () => {
                      freeSolo
                      options={fromSuggestions}
                      inputValue={fromInput}
+                     className='w-full'
                      getOptionLabel={(option) =>
                         typeof option === 'string' ? option : option.place_name
                      }
@@ -120,7 +120,8 @@ const PetTaxiForm = () => {
                   />
                </Box>
 
-               <Box className="hidden md:flex h-[56px] border-l border-gray-300 mx-2 self-end" />
+               {/* Divider */}
+               <Box className="hidden md:block h-[56px] border-l border-gray-300 mx-2 self-end" />
 
                {/* To */}
                <Box className="flex flex-col flex-1 min-w-0">
@@ -159,7 +160,8 @@ const PetTaxiForm = () => {
                   />
                </Box>
 
-               <Box className="hidden md:flex h-[56px] border-l border-gray-300 mx-2 self-end" />
+               {/* Divider */}
+               <Box className="hidden md:block h-[56px] border-l border-gray-300 mx-2 self-end" />
 
                {/* Date Picker */}
                <Box className="flex flex-col flex-1 min-w-0">
@@ -188,7 +190,8 @@ const PetTaxiForm = () => {
                   />
                </Box>
 
-               <Box className="hidden md:flex h-[56px] border-l border-gray-300 mx-2 self-end" />
+               {/* Divider */}
+               <Box className="hidden md:block h-[56px] border-l border-gray-300 mx-2 self-end" />
 
                {/* Button */}
                <Box className="flex flex-1 min-w-0 items-end">

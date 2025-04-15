@@ -55,7 +55,7 @@ export default function Home() {
       <div>
         <HeroSection />
         {/* <Carousel /> */}
-        <div className="mt-72 sm:mt-20">
+        <div className="mt-72 sm:mt-20 .mt-1800">
           <Image
             src='/images/demo.svg'
             alt="img"
