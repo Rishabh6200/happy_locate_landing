@@ -5,8 +5,13 @@ import TestimonialCarousel from '@/components/home/Testimonial'
 import Header from '@/components/pet-taxi/Header'
 import PetTable from '@/components/pet-taxi/PetTable'
 import PetTaxiForm from '@/components/pet-taxi/PetTaxiForm'
+import { Metadata } from 'next'
 import Image from 'next/image'
 import React from 'react'
+
+export const metadata: Metadata = {
+  title: 'Reliable Pet Taxi Services',
+};
 
 const Page = () => {
   return (

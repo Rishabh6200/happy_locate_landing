@@ -9,6 +9,11 @@ import FAQ from '@/components/common/FAQ'
 import RelocationSection from '@/components/home/RelocationSection'
 import BlogSection from '@/components/home/BlogSection'
 import Testimonial from '@/components/common/Testimonial'
+import { Metadata } from 'next'
+
+export const metadata: Metadata = {
+   title: 'Vehicle Shifting',
+ };
 
 const Page = () => {
    return (

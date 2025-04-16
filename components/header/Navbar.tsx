@@ -243,7 +243,7 @@ const Navbar = () => {
               className={`${pathname === '/'
                 ? `text-white bg-[${palette.primary.main}] hover:opacity-80`
                 : 'bg-white text-primary hover:bg-gray-100'
-                } capitalize py-2 px-8 rounded-full`}
+                } capitalize py-2 px-6 rounded-full font-bold`}
               endIcon={<KeyboardArrowDown className="h-7 w-7" />}
             >
               Sign In

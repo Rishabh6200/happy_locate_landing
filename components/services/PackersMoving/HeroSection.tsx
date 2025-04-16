@@ -2,6 +2,7 @@
 import { CheckCircle } from '@mui/icons-material';
 import { Box, Button, Chip, Paper, Typography, useTheme } from '@mui/material';
 import Image from 'next/image';
+import Link from 'next/link';
 import React from 'react';
 
 
@@ -30,7 +31,7 @@ const HeroSection = () => {
 
          {/* Right Content */}
          <div className="flex flex-col gap-4 max-w-xl text-gray-700">
-            <Chip label="About Service" className="w-fit bg-blue-100 text-blue-700 text-xs font-medium" />
+            <Chip label="About Service" className="w-fit bg-blue-100 text-xs font-semibold" style={{ color: palette.primary.main }} />
 
             <Typography variant="h5" component="h2" className="font-bold text-gray-900">
                Relocating to a new home or office?
@@ -59,6 +60,8 @@ const HeroSection = () => {
                variant="contained"
                className="text-white px-8 py-3 my-2 rounded-full w-fit normal-case text-sm shadow-md"
                style={{ backgroundColor: palette.primary.main }}
+               LinkComponent={Link}
+               href='https://dashboard.happylocate.com/swift-app/relocations/pam-basic-details'
             >
                Get a Free Quote
             </Button>

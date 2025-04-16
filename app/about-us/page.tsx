@@ -5,7 +5,12 @@ import WatchIntro from '@/components/about-us/WatchIntro'
 import WhyChooseUs from '@/components/about-us/WhyChooseUs'
 import HeroHeader from '@/components/header/HeroHeader'
 import RelocationSection from '@/components/home/RelocationSection'
+import { Metadata } from 'next'
 import React from 'react'
+
+export const metadata: Metadata = {
+   title: 'About Us | HM',
+};
 
 const Page = () => {
    return (

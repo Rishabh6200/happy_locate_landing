@@ -15,21 +15,18 @@ import Link from 'next/link';
 const blogPosts = [
    {
       image: '/images/blog-one.svg',
-      title: 'Office Relocation: How to Plan for a Smooth Transition and Success',
-      description:
-         'Lorem Ipsum is simply dummy text of the printing and typesetting industry Lorem Ipsum.'
+      title: 'Pet Relocation: Microchipping, Titer Testing, and Vaccination',
+      description: 'Pet relocation, whether domestic or international, has some requirements and careful planning. Understanding titer testing, vaccination, and microchipping rules and regulations...',
    },
    {
       image: '/images/blog-two.svg',
-      title: 'Office Relocation: How to Plan for a Smooth Transition and Success',
-      description:
-         'Lorem Ipsum is simply dummy text of the printing and typesetting industry Lorem Ipsum.'
+      title: 'Revolutionising the Landscape: Technology in Commercial Moving',
+      description: 'Modern technology advancements are changing the face of the commercial moving sector and bringing about a significant transition. Businesses are adopting...'
    },
    {
       image: '/images/blog-three.svg',
-      title: 'Office Relocation: How to Plan for a Smooth Transition and Success',
-      description:
-         'Lorem Ipsum is simply dummy text of the printing and typesetting industry Lorem Ipsum.'
+      title: 'Guide to Choosing the Perfect Airline Approved Travel Pet Crate.',
+      description: 'Pet relocation is an exciting experience, but ensuring safety is the most important aspect. One key safety measure is choosing the right...'
    }
 ];
 
@@ -37,10 +34,10 @@ const BlogSection = () => {
    const { palette } = useTheme();
 
    return (
-      <section className="w-full bg-white relative min-h-[80rem] sm:min-h-[60rem] md:min-h-screen lg:min-h-[80vh]">
+      <section className="w-full bg-white relative py-12">
          {/* Header */}
          <div
-            className="text-white text-center py-10 px-4"
+            className="text-white text-center py-16 px-4"
             style={{ backgroundColor: palette.primary.main }}
          >
             <Container
@@ -58,14 +55,12 @@ const BlogSection = () => {
                      className="rounded-full px-6 gap-2 capitalize font-bold bg-white max-sm:hidden"
                      style={{ color: palette.primary.main }}
                      LinkComponent={Link}
-                     href='https://www.happylocate.com/blog'
-                     target='_blank'
+                     href="https://www.happylocate.com/blog"
+                     target="_blank"
                      endIcon={
                         <ArrowOutward
                            className="h-8 w-8 p-1 -mr-2 rounded-full text-white"
-                           style={{
-                              backgroundColor: palette.primary.main
-                           }}
+                           style={{ backgroundColor: palette.primary.main }}
                         />
                      }
                   >
@@ -75,21 +70,21 @@ const BlogSection = () => {
             </Container>
          </div>
 
-         {/* Blog Cards */}
-         <div className="absolute top-32 w-full py-12 px-4 md:px-12 lg:px-20">
-            <div className="mx-auto max-w-7xl grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 justify-center">
+         {/* Blog Cards Grid */}
+         <Container maxWidth="lg" className="-mt-44">
+            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 justify-center">
                {blogPosts.map((post, index) => (
                   <Card
                      key={index}
-                     className="w-full max-w-[300px] h-[320px] flex flex-col shadow-md rounded-2xl overflow-hidden mx-auto"
+                     className="w-full max-w-[360px] flex flex-col shadow-md rounded-2xl overflow-hidden mx-auto p-0.5"
                   >
                      <CardMedia
                         component="img"
                         image={post.image}
                         alt="Blog image"
-                        className="h-[180px] w-full object-cover"
+                        className="h-[250px] w-full object-cover rounded-tr-2xl rounded-tl-2xl"
                      />
-                     <CardContent className="flex-grow overflow-hidden px-4 py-2">
+                     <CardContent className="flex-grow overflow-hidden px-4 py-4">
                         <Typography
                            gutterBottom
                            variant="h6"
@@ -109,21 +104,24 @@ const BlogSection = () => {
                   </Card>
                ))}
             </div>
-            <div className="flex justify-center my-5 sm:hidden">
+
+            {/* View More Button (for small screens) */}
+            <div className="flex justify-center my-8 sm:hidden">
                <Button
                   LinkComponent={Link}
-                  href='https://www.happylocate.com/blog'
-                  target='_blank'
+                  href="https://www.happylocate.com/blog"
+                  target="_blank"
                   variant="contained"
                   size="medium"
-                  className="absolute rounded-full px-6 gap-2 capitalize font-bold text-lg"
+                  className="rounded-full px-6 gap-2 capitalize font-bold text-lg"
                   style={{ backgroundColor: palette.primary.main }}
                >
                   View More
                </Button>
             </div>
-         </div>
+         </Container>
       </section>
+
    );
 };
 

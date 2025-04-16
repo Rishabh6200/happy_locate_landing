@@ -1,6 +1,7 @@
 "use client";
 import { Box, Button, Chip, Typography, useTheme } from "@mui/material";
 import Image from "next/image";
+import Link from "next/link";
 import React from "react";
 
 interface HeroSectionProps {
@@ -54,6 +55,7 @@ const ServiceHeroSection: React.FC<{ data: HeroSectionProps }> = ({ data }) => {
           className="text-white px-8 py-3 my-2 rounded-full w-fit normal-case text-sm shadow-md"
           style={{ backgroundColor: palette.primary.main }}
           href={data.cta.link}
+          LinkComponent={Link}
         >
           {data.cta.text}
         </Button>

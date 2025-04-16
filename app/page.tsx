@@ -9,7 +9,12 @@ import StatsSection from "@/components/home/StatsSection";
 import Testimonial from "@/components/home/Testimonial";
 import TrustedSection from "@/components/home/TrustedSection";
 import WhyChoose from "@/components/home/WhyChoose";
+import { Metadata } from "next";
 import Image from "next/image";
+
+export const metadata: Metadata = {
+  title: 'Home | HM',
+};
 
 const faqData = [
   {

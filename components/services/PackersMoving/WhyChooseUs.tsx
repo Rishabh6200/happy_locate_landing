@@ -41,7 +41,7 @@ const WhyChooseUs = () => {
       <section className="bg-[#F5F7FB] py-20 px-6 lg:px-24">
          <Container maxWidth='lg' >
             <div className="text-center mb-10">
-               <span className="text-xs font-medium bg-blue-100 px-3 py-1 rounded-full" style={{ color: palette.primary.main }}>
+               <span className="text-xs font-semibold text-white px-6 py-1 rounded-full" style={{ backgroundColor: palette.primary.main }}>
                   Why Choose us
                </span>
                <Typography variant="h4" component="h2" className="font-bold mt-4 text-gray-900">

@@ -1,6 +1,7 @@
 'use client';
 import {
    Container,
+   useTheme,
 } from '@mui/material';
 import ServiceCard from './card/ServiceCard';
 import ServiceHead from './heading/ServiceHead';
@@ -45,8 +46,9 @@ const services = [
 ];
 
 const TrustedSection = () => {
+   const { palette } = useTheme();
    return (
-      <section className="bg-[#F7F7F7] py-10">
+      <section className={`bg-[#F7F7F7] py-10 text-[${palette.primary.main}] font-bold`} >
          <Container>
             <ServiceHead heading='Expert and Reliable' specialHeading='Relocation Services.' />
             <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">

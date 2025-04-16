@@ -11,6 +11,7 @@ import TestimonialCarousel from '@/components/home/Testimonial';
 import RelocationSection from '@/components/home/RelocationSection';
 import PetTransportPricingTable from '@/components/services/pet-relocation/PetTransportPricingTable';
 import MidAbout from '@/components/services/pet-relocation/MidAbout';
+import { Metadata } from 'next';
 
 
 interface PageProps {
@@ -18,6 +19,26 @@ interface PageProps {
       slug: string;
    }>;
 }
+
+const getData = async (slug: string) => {
+   return json.find((s) => s.slug === slug);
+ };
+ 
+ export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
+   const resolvedParams = await params;
+   const service = await getData(resolvedParams.slug);
+ 
+   if (!service) {
+     return {
+       title: 'Service Not Found | HappyLocate',
+       description: 'The service you are looking for does not exist.',
+     };
+   }
+ 
+   return {
+     title: `${service.title} | Pet Relocation - HappyLocate`,
+   };
+ }
 
 const Page: FC<PageProps> = async ({ params }) => {
    const slug = (await params).slug;

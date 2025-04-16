@@ -8,6 +8,11 @@ import FAQ from '@/components/common/FAQ'
 import TestimonialCarousel from '@/components/home/Testimonial'
 import BlogSection from '@/components/home/BlogSection'
 import RelocationSection from '@/components/home/RelocationSection'
+import { Metadata } from 'next'
+
+export const metadata: Metadata = {
+   title: 'Packers & Moving',
+};
 
 const Page = () => {
    return (

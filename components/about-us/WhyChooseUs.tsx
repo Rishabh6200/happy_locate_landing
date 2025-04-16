@@ -2,6 +2,7 @@
 import { ArrowOutward } from '@mui/icons-material';
 import { Button, Typography, Box, useTheme } from '@mui/material';
 import Image from 'next/image';
+import Link from 'next/link';
 
 const cardData = [
    {
@@ -71,6 +72,9 @@ const WhyChooseUs = () => {
                size="medium"
                className="rounded-full px-6 gap-2 capitalize font-bold bg-white"
                style={{ color: palette.primary.main }}
+               LinkComponent={Link}
+               href='https://dashboard.happylocate.com/swift-app/relocations/pam-basic-details'
+               target='_blank'
                endIcon={
                   <ArrowOutward
                      className="h-8 w-8 p-1 -mr-2 rounded-full text-white"

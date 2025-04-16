@@ -9,6 +9,11 @@ import ServiceHeroSection from '@/components/services/ServiceHeroSection'
 import ServicesOffered from '@/components/services/ServicesOffered'
 import React, { FC } from 'react'
 import FAQ from '@/components/common/FAQ'
+import { Metadata } from 'next'
+
+export const metadata: Metadata = {
+   title: 'Pet Relocation',
+ };
 
 const faqs = [
    {
@@ -57,7 +62,7 @@ const Page: FC = () => {
                "content": "Every year, over 350+ pets travel internationally with us, reaching destinations like the USA, UK, Canada, Australia, UAE, and Europe. With a 98% successful Relocation rate, our team of experts ensures that every detail is covered – From Airline-approved pet Travel crates and customs clearance to Veterinary requirements and Quarantine protocols. We partner with global airlines and pet-friendly services to provide the most comfortable and secure experience for your beloved companion.",
                "cta": {
                   "text": "Get a Free Quote",
-                  "link": "/get-quote"
+                  "link": "https://dashboard.happylocate.com/swift-app/relocations/pam-basic-details"
                },
                "image": "/images/service-hero-banner.svg"
             }}

@@ -21,7 +21,7 @@ type FAQProps = {
 
 const FAQ = ({ faqs }: FAQProps) => {
    return (
-      <section className="bg-[#F5F5F4] py-16">
+      <section className="bg-[#F5F5F4] py-16" id='faq'>
          <div className="text-center mb-10">
             <div className="inline-block px-4 py-1 bg-white text-sm border rounded-full mb-2">
                FAQ&apos;s

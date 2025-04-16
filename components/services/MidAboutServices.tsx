@@ -2,6 +2,7 @@ import React from 'react';
 import { Button, Chip, Container, Paper, Typography } from '@mui/material';
 import CheckCircleIcon from '@mui/icons-material/CheckCircle';
 import Image from 'next/image';
+import Link from 'next/link';
 
 const benefits = [
    "Relocations – 3500+ Pets Moved",
@@ -54,7 +55,11 @@ const MidAboutServices = () => {
                   </div>
 
                   {/* CTA Button */}
-                  <Button variant="contained" color="primary" size="large" className="rounded-full px-6">
+                  <Button
+                  LinkComponent={Link}
+                  href='https://dashboard.happylocate.com/swift-app/relocations/pam-basic-details'
+                  target='_blank'
+                  variant="contained" color="primary" size="large" className="rounded-full px-6">
                      Get a Free Quote
                   </Button>
                </div>
