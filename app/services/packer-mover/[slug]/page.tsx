@@ -14,31 +14,29 @@ import Testimonial from '@/components/common/Testimonial';
 import { Metadata } from 'next';
 
 interface PageProps {
-  params: {
+  params: Promise<{
     slug: string;
-  };
+  }>;
 }
 
-const getData = async (slug: string) => {
-  return services.find((s) => s.slug === slug);
-};
-
 export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
-  const service = await getData(params.slug);
+  const { slug } = await params;
+  const service = services.find((s) => s.slug === slug);
 
   if (!service) {
     return {
-      title: 'Service Not Found | HappyLocate',
+      title: 'Service Not Found',
     };
   }
 
   return {
-    title: `${service.title} | Packers & Movers - HappyLocate`,
+    title: service.title,
   };
 }
 
 const Page: FC<PageProps> = async ({ params }) => {
-  const service = await getData(params.slug);
+  const { slug } = await params;
+  const service = services.find((s) => s.slug === slug);
 
   if (!service) notFound();
 
