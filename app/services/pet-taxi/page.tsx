@@ -13,7 +13,7 @@ export const metadata: Metadata = {
   title: 'Reliable Pet Taxi Services',
 };
 
-const Page = () => {
+const Page = () => { 
   return (
     <>
       <Header
