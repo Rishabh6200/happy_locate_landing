@@ -36,8 +36,8 @@ const OurTeam = () => {
 
          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-6xl mx-auto mb-12">
             {founders.map((founder, i) => (
-               <div key={i} className="grid grid-cols-2 min-h-72 py-2">
-                  <Box className="bg-blue-600 overflow-hidden shadow-sm flex rounded-bl-4xl rounded-tr-4xl">
+               <div key={i} className="grid grid-cols-1 md:grid-cols-2 min-h-72 py-2">
+                  <Box className="overflow-hidden shadow-sm flex md:rounded-bl-4xl rounded-tr-4xl">
                      <Image
                         src={founder.image}
                         alt={founder.name}
@@ -46,7 +46,7 @@ const OurTeam = () => {
                         className="w-full h-full object-cover"
                      />
                   </Box>
-                  <Box className="bg-white overflow-hidden shadow-sm flex flex-col justify-center px-6 py-3 text-left rounded-tl-4xl rounded-br-4xl">
+                  <Box className="bg-white overflow-hidden shadow-sm flex flex-col justify-center px-6 py-3 max-md:-mt-6 border border-gray-200 text-left rounded-tl-4xl rounded-br-4xl">
                      <Typography className="font-semibold text-base mb-1">
                         {founder.name}
                      </Typography>

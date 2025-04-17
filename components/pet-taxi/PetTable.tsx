@@ -11,6 +11,7 @@ import {
    Paper,
    Button,
 } from '@mui/material';
+import Link from 'next/link';
 
 type TableRowData = {
    vetVisit: string;
@@ -37,7 +38,9 @@ const PetTable: React.FC<Props> = ({ heading, data }) => {
                <Button
                   variant="contained"
                   size="medium"
-                  className="bg-[#1359D1] text-white font-semibold rounded-full px-6 py-2 capitalize hover:bg-[#0f4cb3] shadow-md"
+                  LinkComponent={Link}
+                  href='https://dashboard.happylocate.com/swift-app/relocations/pet-basic-details'
+                  className="bg-[#1359D1] text-white font-semibold rounded-full px-6 py-2 capitalize hover:bg-[#0f4cb3] shadow-md text-nowrap"
                >
                   Book Now
                </Button>

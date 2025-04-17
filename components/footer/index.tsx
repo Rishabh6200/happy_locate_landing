@@ -57,7 +57,7 @@ const Footer = () => {
                      priority
                   />
                   <Typography className="mt-4 text-gray-300 text-base leading-relaxed">
-                     VSG Pest Control offers reliable, eco-friendly pest control services with over 10 years of experience.
+                     HappyLocate is your trusted partner for safe, hassle-free home, office and pet relocations across India and abroad.
                   </Typography>
                   <div className="flex space-x-3 mt-4">
                      {[Facebook, Instagram, Telegram, LinkedIn].map((Icon, idx) => (

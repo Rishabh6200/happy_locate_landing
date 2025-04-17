@@ -8,7 +8,7 @@ const HeroSection = () => {
   const { palette } = useTheme();
 
   return (
-    <section className="bg-white h-[60vh] sm:h-[70vh] lg:h-[35vh] flex items-start py-10 px-4 md:px-0">
+    <section className="bg-white h-[60vh] sm:h-[70vh] lg:h-[35vh] flex items-start py-10 md:px-0">
       <Container
         maxWidth="lg"
         className="grid grid-cols-1 md:grid-cols-2 items-center gap-6 md:gap-12"
@@ -16,10 +16,10 @@ const HeroSection = () => {
         <div>
           <Typography
             variant="h4"
-            className="font-poppins font-semibold text-black leading-snug md:leading-tight text-[1.75rem] sm:text-[2rem] md:text-[2.5rem] mb-4"
+            className="font-poppins font-medium text-black leading-snug md:leading-tight text-[1.75rem] sm:text-[2rem] md:text-[2.5rem] mb-4"
           >
             Relocate Anywhere – <br />
-            <span style={{ color: palette.primary.main }}>
+            <span style={{ color: palette.primary.main }} className='font-semibold'>
               Anytime at Ease!
             </span>
           </Typography>

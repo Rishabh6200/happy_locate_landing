@@ -274,7 +274,7 @@ const Navbar = () => {
             onClick={() => setMobileOpen(!mobileOpen)}
             className="md:hidden"
           >
-            <MenuIcon />
+           <Image src={pathname === '/' ? '/icons/menu-black.svg':'/icons/menu-white.svg'} alt='menu' height={25} width={25} className='mr-1' />
           </IconButton>
         </Toolbar>
       </Container>

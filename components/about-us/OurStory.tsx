@@ -11,14 +11,14 @@ const OurStory: React.FC = () => {
   const isMobile = useMediaQuery(breakpoints.down('sm'));
   return (
     <section className="w-full">
-      <Container maxWidth='lg' className="relative py-20">
+      <Container maxWidth='lg' className="relative py-10 sm:py-20">
         <Image
           src='/images/subsection-dots.svg'
           alt=''
           fill
           className='absolute -top-16 -z-20 object-cover mx-6 hidden md:block'
         />
-        <div className=" mx-auto px-4 flex gap-16 items-center lg:flex-row flex-col-reverse text-left lg:text-left">
+        <div className=" mx-auto flex gap-16 items-center lg:flex-row flex-col-reverse text-left lg:text-left">
           {/* Left Content */}
           <div className="flex-1 max-w-xl">
             <div className="inline-block bg-[#1359D126] text-primary px-6 py-2 rounded-full text-sm font-semibold mb-6 uppercase tracking-wide" style={{ color: palette.primary.main }}>

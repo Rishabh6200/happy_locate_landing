@@ -42,7 +42,7 @@ const WhyChooseUs = () => {
 
          {/* Heading */}
          <Typography variant="h4" className="font-bold mb-12">
-            WHY VSG PEST CONTROL?
+            Why Choose Happylocate
          </Typography>
 
          {/* Cards */}
@@ -84,7 +84,7 @@ const WhyChooseUs = () => {
                   />
                }
             >
-              Get a Consultation 
+               Get a Consultation
             </Button>
          </div>
       </section>

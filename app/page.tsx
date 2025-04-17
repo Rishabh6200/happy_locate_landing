@@ -60,13 +60,12 @@ export default function Home() {
       <div>
         <HeroSection />
         {/* <Carousel /> */}
-        <div className="mt-72 sm:mt-20 .mt-1800">
+        <div className="relative min-h-[35vh] w-full mt-80 sm:mt-20 .mt-1800">
           <Image
             src='/images/demo.svg'
             alt="img"
-            height={500}
-            width={1000}
-            className="w-full h-auto"
+            fill
+            className="object-cover"
           />
         </div>
         <BrandLogos />
@@ -112,16 +111,14 @@ export default function Home() {
             "For Pet parents, we offer specialized relocation services that prioritize safety and comfort, so your furry companions travel stress-free. Businesses can rely on us for efficient office moves, minimizing downtime and ensuring a swift setup. With HappyLocate, relocation is more than just a move, it’s a seamless transition to your next chapter. Trust us to handle the details while you enjoy a hassle-free experience.",
           ]}
           locations={[
-            "Relocation Mumbai", "Relocation Pune", "Relocation Bangalore", "Relocation Mysore",
-            "Relocation Delhi", "Relocation Chennai", "Relocation Hyderabad", "Relocation Kolkata",
-            "Relocation Mumbai", "Relocation Pune", "Relocation Bangalore", "Relocation Mysore",
-            "Relocation Delhi", "Relocation Chennai", "Relocation Hyderabad", "Relocation Kolkata",
-            "Relocation Mumbai", "Relocation Pune", "Relocation Bangalore", "Relocation Mysore",
-            "Relocation Delhi", "Relocation Chennai", "Relocation Hyderabad", "Relocation Kolkata",
-            "Relocation Mumbai", "Relocation Pune", "Relocation Bangalore", "Relocation Mysore",
-            "Relocation Delhi", "Relocation Chennai", "Relocation Hyderabad", "Relocation Kolkata",
-            "Relocation Mumbai", "Relocation Pune", "Relocation Bangalore", "Relocation Mysore",
-            "Relocation Delhi", "Relocation Chennai", "Relocation Hyderabad", "Relocation Kolkata",
+            "Move with Ease – Delhi",
+            "Move with Ease –Bangalore",
+            "Move with Ease –Pune",
+            "Move with Ease –Chennai",
+            "Move with Ease –Kolkata",
+            "Move with Ease –Mysore",
+            "Move with Ease –Hyderabad",
+            "Move with Ease –Mumbai",
           ]}
         />
       </div>

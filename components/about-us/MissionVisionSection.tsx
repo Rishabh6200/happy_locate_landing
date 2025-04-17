@@ -2,13 +2,13 @@
 
 import React, { useState } from 'react';
 import Image from 'next/image';
-import { Button, ToggleButtonGroup, ToggleButton, useTheme } from '@mui/material';
+import { Button, ToggleButtonGroup, ToggleButton, useTheme, Container } from '@mui/material';
 
 const MissionVisionSection = () => {
    const [view, setView] = useState<'mission' | 'vision'>('mission');
    const { palette } = useTheme();
    return (
-      <div className="flex flex-col lg:flex-row justify-between gap-10 px-6 py-16 max-w-7xl mx-auto">
+      <Container className="flex flex-col lg:flex-row justify-between  sm:gap-10 pb-3 sm:py-16 mx-auto">
          {/* Left - Image + Stats */}
          <div className="relative sm:w-1/2 h-[60vh]">
             {/* <div className="relative"> */}
@@ -75,7 +75,7 @@ const MissionVisionSection = () => {
                )}
             </div>
          </div>
-      </div>
+      </Container>
    );
 }
 export default MissionVisionSection;

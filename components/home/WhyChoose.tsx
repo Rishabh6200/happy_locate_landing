@@ -33,39 +33,39 @@ const WhyChoose = () => {
       >
          <Container>
             <ServiceHead className="text-white" heading="Why Choose" specialHeading="HappyLocate?" />
+
+            <div className="text-white grid grid-cols-1 lg:grid-cols-2 gap-12 items-center justify-between">
+               {/* Left Image */}
+               <div className="flex justify-center items-center col-span-1">
+                  <img
+                     src="/images/whyChoose-image.png"
+                     alt="Pet Carrier and Luggage"
+                     className="rounded-xl max-w-full h-auto object-cover"
+                  />
+               </div>
+
+               {/* Benefits List */}
+               <div className="space-y-10 col-span-1">
+                  {benefits.map((benefit, index) => (
+                     <div key={index} className="flex items-start gap-4">
+                        <div className="flex items-center justify-center text-center mt-4">
+                           <span className='w-8 h-8 border border-white rounded-full text-black bg-white font-bold flex items-center justify-center'>
+                              {index + 1}
+                           </span>
+                        </div>
+                        <div>
+                           <Typography variant="body1" className="!text-white !font-semibold mb-1">
+                              {benefit.title}
+                           </Typography>
+                           <Typography variant="body2" className="!text-gray-300">
+                              {benefit.description}
+                           </Typography>
+                        </div>
+                     </div>
+                  ))}
+               </div>
+            </div>
          </Container>
-
-         <div className="text-white py-12 px-6 lg:px-20 grid grid-cols-1 md:grid-cols-5 gap-7 items-center">
-            {/* Left Image */}
-            <div className="flex justify-center col-span-3">
-               <img
-                  src="/images/whyChoose-image.png"
-                  alt="Pet Carrier and Luggage"
-                  className="rounded-xl w-full max-w-md object-cover"
-               />
-            </div>
-
-            {/* Benefits List */}
-            <div className="space-y-10 col-span-2">
-               {benefits.map((benefit, index) => (
-                  <div key={index} className="flex items-start gap-4">
-                     <div className="flex items-center justify-center text-center mt-4">
-                        <span className='w-8 h-8 border border-white rounded-full text-black bg-white font-bold' >
-                           {index + 1}
-                        </span>
-                     </div>
-                     <div>
-                        <Typography variant="h6" className="!text-white !font-semibold mb-1">
-                           {benefit.title}
-                        </Typography>
-                        <Typography variant="body2" className="!text-gray-300">
-                           {benefit.description}
-                        </Typography>
-                     </div>
-                  </div>
-               ))}
-            </div>
-         </div>
       </section>
    )
 }

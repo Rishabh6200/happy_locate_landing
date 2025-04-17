@@ -16,17 +16,17 @@ const ServiceHeader: FC<ServiceHeaderProps> = ({ title, breadcrumb, isImage = tr
    return (
       <Box
          bgcolor="primary.main"
-         className="relative w-full min-h-[300px] bg-primary overflow-visible pt-[7%]"
+         className="relative w-full pb-4 sm:min-h-[300px] bg-primary overflow-visible pt-[7%] "
       >
          <Container maxWidth="lg">
-            <div className="relative mx-auto py-8 pt-14 z-20">
+            <div className="relative mx-auto sm:py-8 pt-14 z-20">
                <div
-                  className="inline-flex bg-white text-primary px-6 py-2 rounded-full text-sm font-semibold mb-6 uppercase tracking-wide"
+                  className="inline-flex bg-white text-primary px-6 py-2 rounded-full !text-sm sm:font-semibold mb-6 uppercase tracking-wide"
                   style={{ color: palette.primary.main }}
                >
                   Home <ChevronRight className="inline-block align-middle mx-1" fontSize="small" /> {breadcrumb}
                </div>
-               <h1 className="text-white text-4xl md:text-4xl font-semibold leading-tight max-w-xl">
+               <h1 className="text-white text-2xl md:text-4xl font-semibold leading-tight max-w-xl">
                   {title}
                </h1>
             </div>

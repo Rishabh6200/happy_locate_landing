@@ -28,16 +28,14 @@ const Page = () => {
                "For Pet parents, we offer specialized relocation services that prioritize safety and comfort, so your furry companions travel stress-free. Businesses can rely on us for efficient office moves, minimizing downtime and ensuring a swift setup. With HappyLocate, relocation is more than just a move, it’s a seamless transition to your next chapter. Trust us to handle the details while you enjoy a hassle-free experience.",
             ]}
             locations={[
-               "Relocation Mumbai", "Relocation Pune", "Relocation Bangalore", "Relocation Mysore",
-               "Relocation Delhi", "Relocation Chennai", "Relocation Hyderabad", "Relocation Kolkata",
-               "Relocation Mumbai", "Relocation Pune", "Relocation Bangalore", "Relocation Mysore",
-               "Relocation Delhi", "Relocation Chennai", "Relocation Hyderabad", "Relocation Kolkata",
-               "Relocation Mumbai", "Relocation Pune", "Relocation Bangalore", "Relocation Mysore",
-               "Relocation Delhi", "Relocation Chennai", "Relocation Hyderabad", "Relocation Kolkata",
-               "Relocation Mumbai", "Relocation Pune", "Relocation Bangalore", "Relocation Mysore",
-               "Relocation Delhi", "Relocation Chennai", "Relocation Hyderabad", "Relocation Kolkata",
-               "Relocation Mumbai", "Relocation Pune", "Relocation Bangalore", "Relocation Mysore",
-               "Relocation Delhi", "Relocation Chennai", "Relocation Hyderabad", "Relocation Kolkata",
+               "Move with Ease – Delhi",
+               "Move with Ease –Bangalore",
+               "Move with Ease –Pune",
+               "Move with Ease –Chennai",
+               "Move with Ease –Kolkata",
+               "Move with Ease –Mysore",
+               "Move with Ease –Hyderabad",
+               "Move with Ease –Mumbai",
             ]}
          />
       </>

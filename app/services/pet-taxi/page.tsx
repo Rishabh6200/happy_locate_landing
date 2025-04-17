@@ -105,10 +105,14 @@ const Page = () => {
           "Our team of skilled professionals is trained to handle even the most delicate or complex relocations with ease. From valuable antiques to sensitive office equipment, we ensure everything arrives at its destination in perfect condition. For pet lovers, our specialized pet relocation services ensure your furry friends travel comfortably and safely. With HappyLocate, you don’t just relocate; you start a new chapter without the stress of moving. Let us take care of the details while you focus on what matters most. Whether it’s your first move or your tenth, we guarantee a smooth, efficient, and happy moving experience every time."
         ]}
         locations={[
-          "Packer & Mover Mumbai", "Packer & Mover Mumbai", "Packer & Mover Mumbai", "Packer & Mover Mumbai",
-          "Packer & Mover Delhi", "Packer & Mover Delhi", "Packer & Mover Delhi", "Packer & Mover Delhi",
-          "Packer & Mover Gurugram", "Packer & Mover Gurugram", "Packer & Mover Gurugram", "Packer & Mover Gurugram",
-          "Packer & Mover Ahmedabad", "Packer & Mover Ahmedabad", "Packer & Mover Ahmedabad", "Packer & Mover Ahmedabad",
+          "Move with Ease – Delhi",
+          "Move with Ease –Bangalore",
+          "Move with Ease –Pune",
+          "Move with Ease –Chennai",
+          "Move with Ease –Kolkata",
+          "Move with Ease –Mysore",
+          "Move with Ease –Hyderabad",
+          "Move with Ease –Mumbai",
         ]}
       />
     </>

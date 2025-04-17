@@ -12,9 +12,9 @@ const ServiceHead: FC<Props> = ({ heading, specialHeading, className }) => {
    const { palette } = useTheme();
    return (
       <div className="text-center mb-10">
-         <span className="bg-white px-6 py-1 rounded-full text-sm font-semibold" style={{ color: palette.primary.main }}>Trusted by Thousands</span>
-         <Typography variant="h4" className={`font-bold mt-4 ${className}`}>
-            {heading} <span className="text-primary-main" style={{ color: palette.primary.main }}>{specialHeading}</span>
+         <span className="bg-white px-6 py-1 rounded-full text-black text-xl sm:text-sm font-semibold">Trusted by Thousands</span>
+         <Typography variant="h4" className={`font-semibold max-sm:text-2xl mt-4 ${className}`}>
+            {heading} <br className='sm:hidden' /> <span className="" style={{ color: palette.primary.main }}>{specialHeading}</span>
          </Typography>
       </div>
    )

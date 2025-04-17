@@ -4,6 +4,10 @@
   width: 100% !important;
 }
 
+.mui-1mfwagg-MuiPaper-root-MuiAccordion-root::before{
+  height: 0 !important;
+}
+
 @layer utilities {
   .no-scrollbar::-webkit-scrollbar {
     display: none;

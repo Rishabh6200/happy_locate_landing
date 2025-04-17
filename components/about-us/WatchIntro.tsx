@@ -21,7 +21,7 @@ const WatchIntro = () => {
    };
    if (!hasMounted) return null;
    return (
-      <div className="relative bg-[#0F0F0F] py-16 px-4 flex justify-center items-center">
+      <div className="relative bg-[#0F0F0F] py-8 sm:py-16 px-4 flex justify-center items-center">
          <Image
             src="/images/subsection-dots.svg"
             alt=""
